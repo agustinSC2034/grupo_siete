@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Siete | Soluciones Gastronómicas y Producción de Eventos</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Aplicamos las fuentes personalizadas */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #212121; /* Gris Oscuro (Charcoal) */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Paleta de colores con Verde Corporativo */
+        .bg-brand-green { background-color: #38A169; }
+        .text-brand-green { color: #38A169; }
+        .border-brand-green { border-color: #38A169; }
+        .hover\:bg-brand-green-dark:hover { background-color: #2F855A; }
+        
+        .bg-brand-dark { background-color: #212121; }
+        .text-brand-dark { color: #212121; }
+        .bg-brand-light-gray { background-color: #F9FAFB; }
+
+        /* Animación de aparición para secciones */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos para el Image Comparison Slider */
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .comparison-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        .comparison-slider .img-top {
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        }
+        .comparison-slider .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: white;
+            cursor: ew-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .comparison-slider .slider-handle .handle-icon {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            color: #2F855A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-brand-green font-bold">Inicio</a>
+                <a href="gastronomia.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Gastronomía</a>
+                <a href="eventos.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
+                <a href="nosotros.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="index.html" class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Inicio</a>
+            <a href="gastronomia.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Gastronomía</a>
+            <a href="eventos.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
+            <a href="nosotros.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="contacto.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section id="inicio" class="min-h-screen pt-24 md:pt-32 flex items-center bg-brand-light-gray">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-black text-brand-dark mb-4 font-montserrat leading-tight">Soluciones Gastronómicas y Producción Integral de Eventos</h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Combinamos profesionalismo y creatividad para llevar tus proyectos al siguiente nivel. Confianza, calidad e innovación en cada detalle.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <a href="gastronomia.html" class="group block rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
+                        <div class="h-96 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1887&auto=format&fit=crop')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8"><div><h2 class="text-white text-4xl font-bold font-montserrat">Gastronomía</h2><div class="mt-4 bg-brand-green text-white font-bold py-2 px-5 rounded-lg inline-block group-hover:bg-brand-green-dark transition-colors duration-300">Ver Soluciones</div></div></div>
+                        </div>
+                    </a>
+                    <a href="eventos.html" class="group block rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
+                         <div class="h-96 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=2070&auto=format&fit=crop')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8"><div><h2 class="text-white text-4xl font-bold font-montserrat">Producción de Eventos</h2><div class="mt-4 bg-white text-brand-dark font-bold py-2 px-5 rounded-lg inline-block group-hover:bg-gray-200 transition-colors duration-300">Descubrir Servicios</div></div></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRUEBA SOCIAL (CLIENTES) ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-gray-500 text-sm font-bold uppercase tracking-widest mb-12">Confían en nosotros empresas, gobiernos e instituciones</h3>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 sm:gap-x-16 gap-y-8">
+                    <img src="https://placehold.co/150x50/cccccc/999999?text=Cliente+A" alt="Logo Cliente A" class="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"><img src="https://placehold.co/150x50/cccccc/999999?text=Cliente+B" alt="Logo Cliente B" class="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"><img src="https://placehold.co/150x50/cccccc/999999?text=Cliente+C" alt="Logo Cliente C" class="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"><img src="https://placehold.co/150x50/cccccc/999999?text=Cliente+D" alt="Logo Cliente D" class="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"><img src="https://placehold.co/150x50/cccccc/999999?text=Cliente+E" alt="Logo Cliente E" class="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTRO ENFOQUE (CON SLIDER INTERACTIVO) ===== -->
+        <section class="py-20 bg-brand-light-gray fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div id="image-comparison-slider" class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2070&auto=format&fit=crop" alt="Evento producido por Grupo Siete" class="img-bottom">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Plato de catering de Grupo Siete" class="img-top">
+                        <div class="slider-handle">
+                            <div class="handle-icon"><i class="fas fa-arrows-alt-h"></i></div>
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Nuestro Enfoque</span>
+                        <h2 class="text-4xl font-bold text-brand-dark my-4 font-montserrat">Donde la Gastronomía se une a la Producción</h2>
+                        <p class="text-gray-600 text-lg mb-6">Entendemos que un gran evento es una suma de partes perfectas. Por eso, integramos nuestras dos pasiones: la excelencia gastronómica y la impecable producción técnica. No somos dos empresas en una, somos una solución integral que garantiza coherencia, calidad y una ejecución sin fisuras de principio a fin.</p>
+                        <a href="nosotros.html" class="font-bold text-brand-green hover:text-green-800 transition-colors">Conocé nuestra historia <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICIOS DETALLADOS (CON TARJETAS) ===== -->
+        <section id="servicios" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Un abanico de soluciones a tu medida</h2>
+                    <p class="text-lg text-gray-600">Descubrí cómo podemos potenciar tu organización con nuestras dos grandes áreas de especialización.</p>
+                </div>
+                <div class="mb-16">
+                    <div class="flex items-center mb-8"><i class="fas fa-utensils text-3xl text-brand-green mr-4"></i><h3 class="text-3xl font-bold font-montserrat text-brand-dark">Gastronomía Institucional y Corporativa</h3></div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"><img src="https://placehold.co/600x400/EBF8FF/3182CE?text=Comedores" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Comedores Institucionales"><div class="p-6"> <h4 class="text-xl font-bold font-montserrat text-brand-dark">Comedores Institucionales</h4><p class="text-gray-600 mt-2">Gestionamos de forma integral el comedor de tu empresa o institución, garantizando menús nutritivos y de alta calidad.</p></div></div>
+                        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"><img src="https://placehold.co/600x400/E6FFFA/38B2AC?text=Viandas" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Viandas Corporativas"><div class="p-6"><h4 class="text-xl font-bold font-montserrat text-brand-dark">Viandas Corporativas</h4><p class="text-gray-600 mt-2">Diseñamos soluciones de viandas masivas y personalizadas para tu equipo, cuidando el sabor y el balance nutricional.</p></div></div>
+                        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"><img src="https://placehold.co/600x400/FFF5F7/D53F8C?text=Catering" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Catering para Eventos"><div class="p-6"><h4 class="text-xl font-bold font-montserrat text-brand-dark">Catering para Eventos</h4><p class="text-gray-600 mt-2">Elevamos la experiencia de tus eventos con propuestas gastronómicas creativas y de primer nivel.</p></div></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center mb-8"><i class="fas fa-sliders text-3xl text-brand-green mr-4"></i><h3 class="text-3xl font-bold font-montserrat text-brand-dark">Producción Técnica de Eventos</h3></div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"><img src="https://placehold.co/600x400/2D3748/E2E8F0?text=Luces+y+Sonido" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Sonido e Iluminación"><div class="p-6"><h4 class="text-xl font-bold font-montserrat text-brand-dark">Sonido e Iluminación</h4><p class="text-gray-600 mt-2">Contamos con equipamiento de última generación para crear la atmósfera perfecta y asegurar una calidad de sonido impecable.</p></div></div>
+                        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"><img src="https://placehold.co/600x400/4A5568/F7FAFC?text=Estructuras" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Pantallas y Estructuras"><div class="p-6"><h4 class="text-xl font-bold font-montserrat text-brand-dark">Pantallas y Estructuras</h4><p class="text-gray-600 mt-2">Desde pantallas LED de alto impacto hasta escenarios, carpas y tarimas. Montamos la infraestructura que tu evento necesita.</p></div></div>
+                        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"><img src="https://placehold.co/600x400/5A67D8/EBF4FF?text=Mobiliario" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Mobiliario y Ambientación"><div class="p-6"><h4 class="text-xl font-bold font-montserrat text-brand-dark">Mobiliario y Ambientación</h4><p class="text-gray-600 mt-2">Vestimos tu espacio con estilo y funcionalidad, cuidando cada detalle para crear una experiencia única.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROYECTOS DESTACADOS (NARRATIVO) ===== -->
+        <section id="proyectos" class="py-20 bg-brand-light-gray fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Proyectos que Dejan Huella</h2>
+                    <p class="text-lg text-gray-600">No solo lo decimos, lo hacemos. Aquí una muestra de nuestro trabajo en acción.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+                    <img src="https://placehold.co/800x600/a0aec0/ffffff?text=Feria+Caravana" alt="Feria Caravana" class="rounded-xl shadow-xl w-full h-full object-cover">
+                    <div>
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Producción Integral</span>
+                        <h3 class="text-3xl font-bold font-montserrat text-brand-dark my-3">Feria Caravana</h3>
+                        <p class="text-gray-600 mb-4">Nos enorgullece la producción integral de nuestro evento insignia, un festival que fusiona gastronomía, cultura y música en vivo, convocando a miles de personas en cada edición. Gestionamos desde la curaduría de foodtrucks hasta el montaje completo del escenario principal.</p>
+                        <a href="proyectos.html" class="font-bold text-brand-green hover:text-green-800 transition-colors">Ver galería del proyecto <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+                    <div class="lg:order-2">
+                        <img src="https://placehold.co/800x600/e2e8f0/212121?text=Comedor+Empresa+X" alt="Comedor en Empresa" class="rounded-xl shadow-xl w-full h-full object-cover">
+                    </div>
+                    <div class="lg:order-1">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Gastronomía Corporativa</span>
+                        <h3 class="text-3xl font-bold font-montserrat text-brand-dark my-3">Comedor Corporativo</h3>
+                        <p class="text-gray-600 mb-4">Para una importante empresa tecnológica, implementamos y gestionamos su comedor corporativo, sirviendo diariamente más de 500 almuerzos. El proyecto incluyó el diseño de menús rotativos, el manejo de personal y el cumplimiento de estrictas normas de bromatología.</p>
+                        <a href="proyectos.html" class="font-bold text-brand-green hover:text-green-800 transition-colors">Ver más detalles <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTRA FILOSOFÍA ===== -->
+        <section class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestra Filosofía</h2>
+                    <p class="text-lg text-gray-600">Somos una empresa joven y creativa, pero con la seriedad y el compromiso que tu proyecto necesita.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class=" p-8 "><i class="fas fa-handshake text-5xl text-brand-green mb-4"></i><h4 class="text-2xl font-bold font-montserrat mb-2">Confianza</h4><p class="text-gray-600">Construimos relaciones a largo plazo basadas en el cumplimiento, la seriedad y la transparencia.</p></div>
+                    <div class=" p-8 "><i class="fas fa-medal text-5xl text-brand-green mb-4"></i><h4 class="text-2xl font-bold font-montserrat mb-2">Calidad</h4><p class="text-gray-600">Desde la materia prima hasta el último equipo técnico, la excelencia es nuestro estándar.</p></div>
+                    <div class=" p-8 "><i class="fas fa-rocket text-5xl text-brand-green mb-4"></i><h4 class="text-2xl font-bold font-montserrat mb-2">Innovación</h4><p class="text-gray-600">Buscamos constantemente nuevas tendencias para ofrecerte soluciones de vanguardia.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA FINAL ===== -->
+        <section id="contacto" class="py-24 bg-brand-light-gray fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Tenés un proyecto en mente?</h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Hablemos de tus ideas. Estamos listos para brindarte una solución a medida.</p>
+                <a href="contacto.html" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">SOLICITAR PRESUPUESTO</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos desde Tandil para toda la región.</p></div>
+                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="gastronomia.html" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li><li><a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
+                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Tandil, Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>contacto@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p></div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Lógica para el menú móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // --- Lógica para las animaciones de aparición al hacer scroll ---
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => { observer.observe(section); });
+
+        // --- Lógica para cambiar el fondo del header al hacer scroll ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('shadow-xl', window.scrollY > 50);
+        });
+
+        // --- Lógica para el Image Comparison Slider ---
+        const slider = document.getElementById('image-comparison-slider');
+        if (slider) {
+            const handle = slider.querySelector('.slider-handle');
+            const topImage = slider.querySelector('.img-top');
+
+            function moveSlider(x) {
+                const rect = slider.getBoundingClientRect();
+                let newX = x - rect.left;
+                if (newX < 0) newX = 0;
+                if (newX > rect.width) newX = rect.width;
+                
+                const percentage = (newX / rect.width) * 100;
+                handle.style.left = `${percentage}%`;
+                topImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            }
+
+            let isDragging = false;
+            handle.addEventListener('mousedown', () => { isDragging = true; });
+            handle.addEventListener('touchstart', (e) => { isDragging = true; e.preventDefault(); });
+
+            window.addEventListener('mouseup', () => { isDragging = false; });
+            window.addEventListener('touchend', () => { isDragging = false; });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) moveSlider(e.clientX);
+            });
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging) moveSlider(e.touches[0].clientX);
+            });
+        }
+    </script>
+
+</body>
+</html>
