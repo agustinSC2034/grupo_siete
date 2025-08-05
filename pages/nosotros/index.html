@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Grupo Siete</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Estilos consistentes con el resto del sitio */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #212121;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-brand-green { background-color: #38A169; }
+        .text-brand-green { color: #38A169; }
+        .border-brand-green { border-color: #38A169; }
+        .hover\:bg-brand-green-dark:hover { background-color: #2F855A; }
+        .bg-brand-dark { background-color: #212121; }
+        .text-brand-dark { color: #212121; }
+        .bg-brand-light-gray { background-color: #F9FAFB; }
+
+        /* Clases para animaciones de entrada */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-from-left {
+            transform: translateX(-100px);
+        }
+        .slide-in-from-right {
+            transform: translateX(100px);
+        }
+        .scale-in {
+            transform: scale(0.9);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 left-0 w-full z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <a href="gastronomia.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Gastronomía</a>
+                <a href="eventos.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
+                <a href="nosotros.html" class="text-brand-green font-bold">Nosotros</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="index.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
+            <a href="gastronomia.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Gastronomía</a>
+            <a href="eventos.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
+            <a href="nosotros.html" class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="contacto.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION DE LA PÁGINA ===== -->
+        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2070&auto=format&fit=crop')">
+            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <div class="text-center text-white p-6">
+                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat">Nuestra Historia</h1>
+                    <p class="text-xl mt-4">Más que una empresa, una pasión por crear experiencias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTRO MANIFIESTO ===== -->
+        <section class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="text-left animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Quiénes Somos</span>
+                        <h2 class="text-3xl font-bold text-brand-dark my-4 font-montserrat">Jóvenes, creativos y comprometidos con la excelencia.</h2>
+                        <p class="text-gray-600 text-lg mb-4">Grupo Siete nació de la visión de dos mundos que se complementan: la precisión y la calidez de la gastronomía, y la energía y el impacto de la producción de eventos. Somos una empresa joven, pero con una profunda experiencia y un claro objetivo: ofrecer soluciones integrales que superen las expectativas.</p>
+                        <p class="text-gray-600 text-lg">Creemos en el poder de la confianza, en la importancia del cumplimiento y en la innovación como motor de crecimiento. Cada proyecto es una oportunidad para demostrar nuestro compromiso y para construir relaciones a largo plazo con nuestros clientes.</p>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Equipo de Grupo Siete en una reunión de planificación" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TIMELINE / NUESTRA TRAYECTORIA ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestra Trayectoria</h2>
+                    <p class="text-lg text-gray-600">Un camino de crecimiento y evolución constante.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 hidden md:block"></div>
+                    <!-- Hito 1 -->
+                    <div class="md:flex items-center md:justify-end mb-12 md:mb-0 animate-on-scroll slide-in-from-right">
+                        <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+                            <div class="bg-brand-green text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mx-auto md:mr-0 mb-4 shadow-lg">2015</div>
+                            <h3 class="text-2xl font-bold font-montserrat mb-2">El Comienzo</h3>
+                            <p class="text-gray-600">Nace Grupo Siete, enfocada inicialmente en la producción técnica para eventos sociales en Tandil y la región.</p>
+                        </div>
+                    </div>
+                    <!-- Hito 2 -->
+                    <div class="md:flex items-center md:justify-start mb-12 md:mb-0 animate-on-scroll slide-in-from-left">
+                        <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+                            <div class="bg-brand-green text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mx-auto md:ml-0 mb-4 shadow-lg">2018</div>
+                            <h3 class="text-2xl font-bold font-montserrat mb-2">Nace la División Gastronomía</h3>
+                            <p class="text-gray-600">Inauguramos nuestra unidad de negocio de catering, respondiendo a la demanda de nuestros clientes de una solución integral.</p>
+                        </div>
+                    </div>
+                    <!-- Hito 3 -->
+                    <div class="md:flex items-center md:justify-end mb-12 md:mb-0 animate-on-scroll slide-in-from-right">
+                        <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+                           <div class="bg-brand-green text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mx-auto md:mr-0 mb-4 shadow-lg">2021</div>
+                            <h3 class="text-2xl font-bold font-montserrat mb-2">Primer Gran Contrato Institucional</h3>
+                            <p class="text-gray-600">Nos adjudicamos la gestión del primer comedor para una empresa de más de 300 empleados, consolidando nuestra presencia en el sector corporativo.</p>
+                        </div>
+                    </div>
+                     <!-- Hito 4 -->
+                    <div class="md:flex items-center md:justify-start animate-on-scroll slide-in-from-left">
+                        <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+                           <div class="bg-brand-green text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mx-auto md:ml-0 mb-4 shadow-lg">HOY</div>
+                            <h3 class="text-2xl font-bold font-montserrat mb-2">Mirando al Futuro</h3>
+                            <p class="text-gray-600">Con un equipo consolidado y equipamiento de punta, seguimos creciendo y buscando nuevos desafíos para innovar en cada proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTRA FILOSOFÍA ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestros Pilares</h2>
+                    <p class="text-lg text-gray-600">Los valores que guían cada una de nuestras decisiones.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class="p-8 animate-on-scroll scale-in" style="transition-delay: 100ms;"><i class="fas fa-handshake text-5xl text-brand-green mb-4"></i><h4 class="text-2xl font-bold font-montserrat mb-2">Confianza</h4><p class="text-gray-600">Construimos relaciones a largo plazo basadas en el cumplimiento, la seriedad y la transparencia.</p></div>
+                    <div class="p-8 animate-on-scroll scale-in" style="transition-delay: 200ms;"><i class="fas fa-medal text-5xl text-brand-green mb-4"></i><h4 class="text-2xl font-bold font-montserrat mb-2">Calidad</h4><p class="text-gray-600">Desde la materia prima hasta el último equipo técnico, la excelencia es nuestro estándar.</p></div>
+                    <div class="p-8 animate-on-scroll scale-in" style="transition-delay: 300ms;"><i class="fas fa-rocket text-5xl text-brand-green mb-4"></i><h4 class="text-2xl font-bold font-montserrat mb-2">Innovación</h4><p class="text-gray-600">Buscamos constantemente nuevas tendencias para ofrecerte soluciones de vanguardia.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA FINAL ===== -->
+        <section id="contacto" class="py-24 bg-brand-light-gray">
+            <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Querés ser parte de nuestra historia?</h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos y descubrí cómo podemos ayudarte a llevar tu próximo proyecto al siguiente nivel.</p>
+                <a href="contacto.html" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">HABLEMOS</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos desde Tandil para toda la región.</p></div>
+                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="gastronomia.html" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li><li><a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
+                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Tandil, Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>contacto@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p></div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Lógica para el menú móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // --- Lógica para las animaciones de aparición al hacer scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

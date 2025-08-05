@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción de Eventos | Grupo Siete</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Estilos consistentes con el resto del sitio */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #212121;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-brand-green { background-color: #38A169; }
+        .text-brand-green { color: #38A169; }
+        .border-brand-green { border-color: #38A169; }
+        .hover\:bg-brand-green-dark:hover { background-color: #2F855A; }
+        .bg-brand-dark { background-color: #212121; }
+        .text-brand-dark { color: #212121; }
+        .bg-brand-light-gray { background-color: #F9FAFB; }
+
+        /* Clases para animaciones de entrada */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-from-left {
+            transform: translateX(-100px);
+        }
+        .slide-in-from-right {
+            transform: translateX(100px);
+        }
+        .scale-in {
+            transform: scale(0.9);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        /* Estilos para el Hero con video */
+        .video-hero-container {
+            height: 90vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-hero-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 left-0 w-full z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <a href="gastronomia.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Gastronomía</a>
+                <a href="eventos.html" class="text-brand-green font-bold">Eventos</a>
+                <a href="nosotros.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
+            </nav>
+            <a href="contacto.html" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="index.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
+            <a href="gastronomia.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Gastronomía</a>
+            <a href="eventos.html" class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Eventos</a>
+            <a href="nosotros.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="contacto.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION CON VIDEO ===== -->
+        <section class="video-hero-container">
+            <video autoplay loop muted playsinline>
+                <!-- Usar un video corto y optimizado para la web -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-a-crowd-of-people-at-a-concert-applauding-4235-large.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                <div class="text-center text-white p-6">
+                    <span class="text-lg font-semibold uppercase tracking-widest animate-on-scroll scale-in is-visible" style="transition-delay: 200ms;">Producción Técnica</span>
+                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat animate-on-scroll scale-in is-visible" style="transition-delay: 400ms;">Eventos que Impactan</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DESCRIPCIÓN DEL SERVICIO ===== -->
+        <section class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="text-left animate-on-scroll slide-in-from-left">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">La tecnología y la experiencia para hacer brillar tu evento</h2>
+                        <p class="text-gray-600 text-lg mb-4">La producción técnica es el corazón de cualquier evento memorable. Es la que crea la atmósfera, asegura que el mensaje se escuche claro y fuerte, y genera un impacto visual que perdura en la memoria de los asistentes. En Grupo Siete, combinamos equipamiento de última generación con un equipo de técnicos expertos para garantizar una ejecución impecable.</p>
+                        <p class="text-gray-600 text-lg">Desde congresos y ferias hasta lanzamientos de producto y recitales, proveemos una solución integral que cubre todas las necesidades técnicas de tu producción.</p>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
+                        <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070&auto=format&fit=crop" alt="Equipo técnico preparando un evento" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTROS SERVICIOS TÉCNICOS (REDiseño NARRATIVO) ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestros Servicios Técnicos</h2>
+                    <p class="text-lg text-gray-600">Un portfolio completo para cubrir cada aspecto de tu evento.</p>
+                </div>
+                
+                <!-- Servicio 1: Sonido -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
+                        <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=1964&auto=format&fit=crop" alt="Sistema de sonido profesional en un evento">
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-right">
+                        <i class="fas fa-volume-high text-3xl text-brand-green mb-4"></i>
+                        <h3 class="text-3xl font-bold font-montserrat mb-4">Sonido Profesional</h3>
+                        <p class="text-gray-600">Desde la claridad de la voz en una conferencia hasta la potencia de un recital, el sonido es clave. Contamos con sistemas Line Array de primeras marcas, consolas digitales, y una amplia gama de microfonía para garantizar que tu mensaje se escuche a la perfección, sin importar la escala del evento.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Iluminación -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1974&auto=format&fit=crop" alt="Iluminación creativa en un escenario">
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-left lg:order-1">
+                        <i class="fas fa-lightbulb text-3xl text-brand-green mb-4"></i>
+                        <h3 class="text-3xl font-bold font-montserrat mb-4">Iluminación Creativa</h3>
+                        <p class="text-gray-600">Transformamos espacios y generamos emociones a través de la luz. Diseñamos esquemas de iluminación escénica, arquitectural y decorativa utilizando cabezales móviles, PAR LEDs y consolas de control DMX para crear atmósferas únicas y memorables.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Pantallas y Video -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
+                        <img src="https://images.unsplash.com/photo-1593344484962-796b53d44a13?q=80&w=2070&auto=format&fit=crop" alt="Pantalla LED gigante en un evento">
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-right">
+                        <i class="fas fa-tv text-3xl text-brand-green mb-4"></i>
+                        <h3 class="text-3xl font-bold font-montserrat mb-4">Pantallas y Video</h3>
+                        <p class="text-gray-600">El contenido visual es rey. Ofrecemos pantallas LED modulares de alta resolución para interiores y exteriores, proyectores de alta luminosidad y sistemas de switching de video para asegurar que tu mensaje se vea con la máxima calidad e impacto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== POR QUÉ ELEGIRNOS ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
+                        <img src="https://images.unsplash.com/photo-1614996362302-14c13755075c?q=80&w=2070&auto=format&fit=crop" alt="Técnico operando una consola de sonido" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-right">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Tecnología de punta y un equipo que responde</h2>
+                        <ul class="space-y-6 text-gray-600 text-lg">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Planificación Detallada</h4>
+                                    <p>Realizamos un relevamiento técnico previo y un diseño 3D del montaje para que no haya sorpresas.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Equipamiento de Primeras Marcas</h4>
+                                    <p>Invertimos constantemente en la renovación de nuestro equipamiento para ofrecer siempre la mejor calidad y fiabilidad.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Soporte Integral</h4>
+                                    <p>Nuestro equipo acompaña tu evento de principio a fin, asegurando que todo funcione a la perfección.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALERÍA ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestras Producciones</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in col-span-2"><img src="https://placehold.co/800x400/2D3748/E2E8F0?text=Congreso" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Evento corporativo"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/400x400/a0aec0/ffffff?text=Recital" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Recital"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/400x400/4a5568/ffffff?text=Boda" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Boda"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/400x400/e2e8f0/212121?text=Feria" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Feria"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in col-span-2"><img src="https://placehold.co/800x400/5A67D8/EBF4FF?text=Lanzamiento" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Lanzamiento de producto"></div>
+                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/400x400/e2e8f0/212121?text=Desfile" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Desfile"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA FINAL ===== -->
+        <section id="contacto" class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Listo para que tu evento sea inolvidable?</h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos para que nuestro equipo técnico te asesore y prepare un presupuesto a medida.</p>
+                <a href="contacto.html" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">COTIZAR EVENTO</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos desde Tandil para toda la región.</p></div>
+                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="gastronomia.html" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li><li><a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
+                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Tandil, Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>contacto@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p></div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Lógica para el menú móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // --- Lógica para las animaciones de aparición al hacer scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 }); // Aumentar umbral para que la animación se active un poco después
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- Lógica para la galería con delay escalonado ---
+        const galleryItems = document.querySelectorAll('#gallery-grid > div');
+        const galleryObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    const items = entry.target.querySelectorAll('div');
+                     items.forEach((item, index) => {
+                        item.style.transitionDelay = `${index * 100}ms`;
+                        observer.unobserve(item);
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const galleryGrid = document.getElementById('gallery-grid');
+        if(galleryGrid) {
+            galleryObserver.observe(galleryGrid);
+        }
+    </script>
+
+</body>
+</html>
