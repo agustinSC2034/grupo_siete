@@ -79,24 +79,44 @@
     <!-- ===== HEADER ===== -->
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 left-0 w-full z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
+            <a href="../../index.html" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
-                <a href="gastronomia.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Gastronomía</a>
-                <a href="eventos.html" class="text-brand-green font-bold">Eventos</a>
-                <a href="nosotros.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
+                <a href="../../index.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                        Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="../gastronomia/catering_corporativo/index.html" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
+                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="../gastronomia/comedores_institucionales/index.html" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+                <a href="index.html" class="text-brand-green font-bold">Eventos</a>
+                <a href="../nosotros/index.html" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
             </nav>
-            <a href="contacto.html" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <a href="../contacto/index.html" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
             <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="index.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
-            <a href="gastronomia.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Gastronomía</a>
-            <a href="eventos.html" class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Eventos</a>
-            <a href="nosotros.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
-            <div class="p-4"><a href="contacto.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+            <a href="../../index.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
+            <div class="border-b border-gray-100">
+                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
+                <a href="../gastronomia/catering_corporativo/index.html" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                </a>
+                <a href="../gastronomia/comedores_institucionales/index.html" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                </a>
+            </div>
+            <a href="index.html" class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Eventos</a>
+            <a href="../nosotros/index.html" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="../contacto/index.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
         </div>
     </header>
 
@@ -105,7 +125,7 @@
         <section class="video-hero-container">
             <video autoplay loop muted playsinline>
                 <!-- Usar un video corto y optimizado para la web -->
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-a-crowd-of-people-at-a-concert-applauding-4235-large.mp4" type="video/mp4">
+                <source src="../../assets/video/video_grupo7.mp4" type="video/mp4">
                 Tu navegador no soporta videos HTML5.
             </video>
             <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
@@ -246,9 +266,9 @@
     <footer class="bg-brand-dark text-white">
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8">
-                <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos desde Tandil para toda la región.</p></div>
+                <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p></div>
                 <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="gastronomia.html" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li><li><a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
-                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Tandil, Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>contacto@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
+                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p></div>
         </div>

@@ -25,15 +25,13 @@
 - `pantalla_1.jpg`, `pantalla_2.jpg`, `pantalla_3.jpeg` - Equipamiento audiovisual
 - `equipamiento_tecnico.jpeg` - Equipamiento técnico general
 
+- `assets\video\video_grupo7.mp4` videoEventos
+
 ## 🚀 Roadmap de Desarrollo
 
 ### **FASE 1: Completar Estructura de Contenido (Prioridad Alta)**
 
-#### 1.1 Analizar y mapear contenido de la web anterior
-- [ ] Extraer textos útiles de las páginas HTML antiguas
-- [ ] Identificar servicios específicos mencionados
-- [ ] Mapear estructura de información existente
-- [ ] Definir jerarquía de contenido para cada sección
+Si no se puede acceder a la pagina antigua poder verla acá: https://www.grupo-siete.com/
 
 #### 1.2 Definir arquitectura de información final
 - [ ] **Gastronomía:**
