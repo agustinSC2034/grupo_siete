@@ -9,21 +9,17 @@
 - **Componentes base**: Header fijo, animaciones de scroll, diseño responsive
 
 ### ⚠️ **Páginas en desarrollo/incompletas:**
-- `/pages/contacto/index.html` - Estructura base existente
-- `/pages/eventos/index.html` - Estructura base existente  
+- `/pages/contacto/` - Estructura base existente
+- `/pages/eventos/` - Estructura base existente  
 - `/pages/gastronomia/catering_corporativo/` - Estructura base existente
 - `/pages/gastronomia/comedores_institucionales/` - Estructura base existente
-- `/pages/nosotros/index.html` - Estructura base existente
+- `/pages/nosotros/` - Estructura base existente
+
+usar info de:
+contexto\Catalogo G7.pdf y contexto\Catálogo Produccion Eventos G7 -.pdf
 
 ### 🎯 **Recursos rescatados de la web anterior:**
 **Imágenes movidas a `/assets/img/`:**
-- `logo_g7_3d.png` - Logo principal 3D
-- `logo_g7.png` - Logo alternativo
-- `catering_1.jpg` - Imagen de servicios de catering
-- `eventos_corporativos_3.jpg` - Imagen de eventos
-- `maquina_expendedora.jpg` - Equipamiento de comedores
-- `pantalla_1.jpg`, `pantalla_2.jpg`, `pantalla_3.jpeg` - Equipamiento audiovisual
-- `equipamiento_tecnico.jpeg` - Equipamiento técnico general
 
 - `assets\video\video_grupo7.mp4` videoEventos
 
@@ -46,7 +42,7 @@ Si no se puede acceder a la pagina antigua poder verla acá: https://www.grupo-s
 
 ### **FASE 2: Desarrollo de Páginas Principales (Prioridad Alta)**
 
-#### 2.1 Página "Nosotros" - `/pages/nosotros/index.html`
+#### 2.1 Página "Nosotros" - `/pages/nosotros/`
 **Objetivo:** Establecer credibilidad y confianza B2B
 - [ ] Sección Hero con propuesta de valor clara
 - [ ] Historia y trayectoria de la empresa
