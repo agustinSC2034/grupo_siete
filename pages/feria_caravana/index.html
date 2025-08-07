@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria Caravana | Grupo Siete</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Estilos consistentes con el resto del sitio */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #212121;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-brand-green { background-color: #38A169; }
+        .text-brand-green { color: #38A169; }
+        .border-brand-green { border-color: #38A169; }
+        .hover\:bg-brand-green-dark:hover { background-color: #2F855A; }
+        .bg-brand-dark { background-color: #212121; }
+        .text-brand-dark { color: #212121; }
+        .bg-brand-light-gray { background-color: #F9FAFB; }
+
+        /* Clases para animaciones de entrada */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-from-left {
+            transform: translateX(-100px);
+        }
+        .slide-in-from-right {
+            transform: translateX(100px);
+        }
+        .scale-in {
+            transform: scale(0.9);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../" class="flex items-center space-x-3">
+                <img src="../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <a href="../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                        Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="../gastronomia/catering_corporativo/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="../gastronomia/comedores_institucionales/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
+                            <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+                <a href="../nosotros/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
+            </nav>
+            <a href="../contacto/" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
+            <a href="../eventos/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
+            <div class="border-b border-gray-100">
+                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
+                <a href="../gastronomia/catering_corporativo/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                </a>
+                <a href="../gastronomia/comedores_institucionales/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                </a>
+            </div>
+            <a href="../nosotros/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="../contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="h-screen bg-cover bg-center bg-fixed relative" style="background-image: url('../../assets/img/caravana.png')">
+            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <div class="text-center text-white animate-on-scroll scale-in max-w-4xl mx-auto px-6">
+                    <h1 class="text-5xl md:text-7xl font-black font-montserrat mb-6">Feria Caravana</h1>
+                    <p class="text-xl md:text-2xl mb-8">Festival Urbano de Food Trucks más importante del Gran Buenos Aires</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div class="bg-white/10 backdrop-blur-lg rounded-lg px-6 py-3">
+                            <span class="text-3xl font-bold text-brand-green">+50</span>
+                            <p class="text-sm">Ediciones Realizadas</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-lg px-6 py-3">
+                            <span class="text-3xl font-bold text-brand-green">25K</span>
+                            <p class="text-sm">Personas por evento</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-lg px-6 py-3">
+                            <span class="text-3xl font-bold text-brand-green">100K+</span>
+                            <p class="text-sm">Seguidores en redes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== QUÉ ES FERIA CARAVANA ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Festival Urbano</span>
+                        <h2 class="text-4xl font-bold text-brand-dark mb-6 font-montserrat">El punto de encuentro gastronómico del Gran Buenos Aires</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Caravana es una <strong>feria itinerante de food trucks y productos gourmet</strong> desarrollada en los municipios del Gran Buenos Aires, con apoyo de las autoridades locales. Cada evento se transforma en el punto de encuentro de miles de vecinos que encuentran un espacio de diversión y buena comida en la plaza del barrio.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Desde un paseo en familia, compartir una tarde con amigos o una salida en pareja, siempre degustando un menú de pasos o comprando un producto gourmet, todas son opciones en este <strong>festival del sabor</strong>.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Los mejores Food Trucks</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Shows en vivo y DJs</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Entretenimientos familiares</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Cine en la plaza</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll slide-in-from-right">
+                        <img src="../../assets/img/personas_comiendo_en_caravana.jpg" alt="Personas disfrutando en Feria Caravana" class="rounded-xl shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCIA COMPLETA ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll scale-in">
+                    <span class="text-brand-green font-bold uppercase tracking-wider">Una Experiencia Única</span>
+                    <h2 class="text-4xl font-bold text-brand-dark font-montserrat">Mucho más que food trucks</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Gastronomía Premium</h3>
+                        <p class="text-gray-600">Los mejores food trucks del mercado con propuestas gastronómicas innovadoras y de calidad.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-music text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Entretenimiento</h3>
+                        <p class="text-gray-600">Shows en vivo, DJs, espectáculos y entretenimientos para toda la familia.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-film text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Cine al Aire Libre</h3>
+                        <p class="text-gray-600">Proyecciones especiales y cine en la plaza para toda la familia.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg animate-on-scroll scale-in" style="transition-delay: 400ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shopping-bag text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Productos Gourmet</h3>
+                        <p class="text-gray-600">Stands de productos gastronómicos artesanales y gourmet para llevar a casa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTRAS EDICIONES ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll scale-in">
+                    <span class="text-brand-green font-bold uppercase tracking-wider">Nuestro Recorrido</span>
+                    <h2 class="text-4xl font-bold text-brand-dark font-montserrat">Últimas Ediciones</h2>
+                    <p class="text-lg text-gray-600 mt-4">Un recorrido por los municipios del Gran Buenos Aires</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 2019 -->
+                    <div class="bg-brand-light-gray rounded-xl p-6 animate-on-scroll slide-in-from-left">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl font-bold text-brand-green font-montserrat">2019</div>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Ramos Mejía (8 ediciones)</li>
+                            <li>• Moreno</li>
+                            <li>• Villa Ballester</li>
+                            <li>• San Justo (3 ediciones)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2018 -->
+                    <div class="bg-brand-light-gray rounded-xl p-6 animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl font-bold text-brand-green font-montserrat">2018</div>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Lomas de Zamora (5 ediciones)</li>
+                            <li>• Ituzaingó (2 ediciones)</li>
+                            <li>• San Martín</li>
+                            <li>• Tapiales</li>
+                            <li>• Ramos Mejía (2 ediciones)</li>
+                            <li>• San Justo (2 ediciones)</li>
+                            <li>• Moreno</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2017 -->
+                    <div class="bg-brand-light-gray rounded-xl p-6 animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl font-bold text-brand-green font-montserrat">2017</div>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Chilavert (2 ediciones)</li>
+                            <li>• San Isidro (2 ediciones)</li>
+                            <li>• Ramos Mejía (2 ediciones)</li>
+                            <li>• Golf de San Andrés</li>
+                            <li>• Hurlingham</li>
+                            <li>• San Martín</li>
+                            <li>• Ituzaingó (2 ediciones)</li>
+                            <li>• Moreno</li>
+                            <li>• Adrogué</li>
+                            <li>• Laferrere</li>
+                            <li>• San Justo (2 ediciones)</li>
+                            <li>• Villa Ballester</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2016 -->
+                    <div class="bg-brand-light-gray rounded-xl p-6 animate-on-scroll slide-in-from-right">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl font-bold text-brand-green font-montserrat">2016</div>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Moreno</li>
+                            <li>• José C. Paz</li>
+                            <li>• Ituzaingó</li>
+                            <li>• San Martín</li>
+                            <li>• Hurlingham</li>
+                            <li>• San Justo</li>
+                            <li>• Adrogué</li>
+                            <li>• Marcos Paz</li>
+                            <li>• Pilar</li>
+                            <li>• San Isidro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== IMPACTO Y ALCANCE ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll scale-in">
+                    <span class="text-brand-green font-bold uppercase tracking-wider">Nuestro Alcance</span>
+                    <h2 class="text-4xl font-bold text-brand-dark font-montserrat">Gran Posicionamiento en Redes</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-on-scroll slide-in-from-left">
+                        <h3 class="text-2xl font-bold text-brand-dark mb-6 font-montserrat">Marketing Integral</h3>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            La feria cuenta con un <strong>gran posicionamiento en redes sociales</strong>, con más de 100.000 seguidores en Facebook. Desarrollamos una estrategia comunicacional completa que incluye:
+                        </p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-green mt-1 mr-3 text-sm"></i>
+                                <span>Gran desarrollo de gráfica en vía pública</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-green mt-1 mr-3 text-sm"></i>
+                                <span>Audios promocionales en medios locales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-green mt-1 mr-3 text-sm"></i>
+                                <span>Distribución masiva de flyers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-green mt-1 mr-3 text-sm"></i>
+                                <span>Gestión integral de redes sociales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-brand-green mt-1 mr-3 text-sm"></i>
+                                <span>Coordinación con autoridades municipales</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6 animate-on-scroll slide-in-from-right">
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg">
+                            <div class="text-4xl font-bold text-brand-green mb-2 font-montserrat">+100K</div>
+                            <p class="text-gray-600">Seguidores en Facebook</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg">
+                            <div class="text-4xl font-bold text-brand-green mb-2 font-montserrat">25K</div>
+                            <p class="text-gray-600">Promedio de asistencia</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg">
+                            <div class="text-4xl font-bold text-brand-green mb-2 font-montserrat">+50</div>
+                            <p class="text-gray-600">Ediciones realizadas</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg">
+                            <div class="text-4xl font-bold text-brand-green mb-2 font-montserrat">15+</div>
+                            <p class="text-gray-600">Municipios visitados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA FINAL ===== -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6 font-montserrat">¿Querés que Feria Caravana llegue a tu municipio?</h2>
+                    <p class="text-lg text-gray-600 mb-8">Contactanos para organizar la próxima edición en tu localidad y ofrecer a los vecinos una experiencia gastronómica única.</p>
+                    <a href="../contacto/" class="inline-block bg-brand-green text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                        Organizar Feria Caravana <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3>
+                    <p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="../eventos/" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="../gastronomia/catering_corporativo/" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li>
+                        <li><a href="../nosotros/" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li>
+                        <li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li>
+                        <li><i class="fas fa-phone w-5 mr-2"></i>11 4508.9023</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.facebook.com/FeriaCaravana" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Lógica para el menú móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // --- Lógica para las animaciones de aparición al hacer scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

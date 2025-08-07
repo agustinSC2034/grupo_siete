@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producción de Eventos | Grupo Siete</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Montserrat & Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -25,42 +28,75 @@
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
-        h1, h2, h3, h4, h5, h6, .font-montserrat {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-montserrat {
             font-family: 'Montserrat', sans-serif;
         }
-        .bg-brand-green { background-color: #38A169; }
-        .text-brand-green { color: #38A169; }
-        .border-brand-green { border-color: #38A169; }
-        .hover\:bg-brand-green-dark:hover { background-color: #2F855A; }
-        .bg-brand-dark { background-color: #212121; }
-        .text-brand-dark { color: #212121; }
-        .bg-brand-light-gray { background-color: #F9FAFB; }
+
+        .bg-brand-green {
+            background-color: #38A169;
+        }
+
+        .text-brand-green {
+            color: #38A169;
+        }
+
+        .border-brand-green {
+            border-color: #38A169;
+        }
+
+        .hover\:bg-brand-green-dark:hover {
+            background-color: #2F855A;
+        }
+
+        .bg-brand-dark {
+            background-color: #212121;
+        }
+
+        .text-brand-dark {
+            color: #212121;
+        }
+
+        .bg-brand-light-gray {
+            background-color: #F9FAFB;
+        }
 
         /* Clases para animaciones de entrada */
         .animate-on-scroll {
             opacity: 0;
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .slide-in-from-left {
             transform: translateX(-100px);
         }
+
         .slide-in-from-right {
             transform: translateX(100px);
         }
+
         .scale-in {
             transform: scale(0.9);
         }
+
         .is-visible {
             opacity: 1;
             transform: none;
         }
-        
+
         /* Estilos para el Hero con video */
         .video-hero-container {
             height: 90vh;
             position: relative;
             overflow: hidden;
         }
+
         .video-hero-container video {
             position: absolute;
             top: 50%;
@@ -74,10 +110,12 @@
         }
     </style>
 </head>
+
 <body class="bg-white">
 
     <!-- ===== HEADER ===== -->
-    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
+    <header id="header"
+        class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="../../" class="flex items-center space-x-3">
                 <img src="../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-10 w-auto">
@@ -87,39 +125,55 @@
                 <a href="../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
                 <a href="index.html" class="text-brand-green font-bold">Eventos</a>
                 <div class="relative group">
-                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                    <button
+                        class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
                         Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
-                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="../gastronomia/comedores_institucionales/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                    <div
+                        class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="../gastronomia/comedores_institucionales/"
+                            class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
                             <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
                         </a>
-                        <a href="../gastronomia/catering_corporativo/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
+                        <a href="../gastronomia/catering_corporativo/"
+                            class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
                             <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
                         </a>
                     </div>
                 </div>
-                <a href="../nosotros/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
+                <a href="../nosotros/"
+                    class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
             </nav>
-            <a href="../contacto/" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <a href="../contacto/"
+                class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
             <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <a href="../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
-            <a href="index.html" class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Eventos</a>
+            <a href="index.html"
+                class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Eventos</a>
             <div class="border-b border-gray-100">
                 <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
-                <a href="../gastronomia/catering_corporativo/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                <a href="../gastronomia/catering_corporativo/"
+                    class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
                     <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
                 </a>
-                <a href="../gastronomia/comedores_institucionales/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                <a href="../gastronomia/comedores_institucionales/"
+                    class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
                     <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
                 </a>
             </div>
-            <a href="../nosotros/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
-            <div class="p-4"><a href="../contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+            <a href="../nosotros/"
+                class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="../contacto/"
+                    class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a>
+            </div>
         </div>
     </header>
 
@@ -133,8 +187,10 @@
             </video>
             <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
                 <div class="text-center text-white p-6">
-                    <span class="text-lg font-semibold uppercase tracking-widest animate-on-scroll scale-in is-visible" style="transition-delay: 200ms;">Producción Técnica</span>
-                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat animate-on-scroll scale-in is-visible" style="transition-delay: 400ms;">Eventos que Impactan</h1>
+                    <span class="text-lg font-semibold uppercase tracking-widest animate-on-scroll scale-in is-visible"
+                        style="transition-delay: 200ms;">Producción Técnica</span>
+                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat animate-on-scroll scale-in is-visible"
+                        style="transition-delay: 400ms;">Eventos que Impactan</h1>
                 </div>
             </div>
         </section>
@@ -144,12 +200,20 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="text-left animate-on-scroll slide-in-from-left">
-                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">La tecnología y la experiencia para hacer brillar tu evento</h2>
-                        <p class="text-gray-600 text-lg mb-4">La producción técnica es el corazón de cualquier evento memorable. Es la que crea la atmósfera, asegura que el mensaje se escuche claro y fuerte, y genera un impacto visual que perdura en la memoria de los asistentes. En Grupo Siete, combinamos equipamiento de última generación con un equipo de técnicos expertos para garantizar una ejecución impecable.</p>
-                        <p class="text-gray-600 text-lg">Desde congresos y ferias hasta lanzamientos de producto y recitales, proveemos una solución integral que cubre todas las necesidades técnicas de tu producción.</p>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">La tecnología y la
+                            experiencia para hacer brillar tu evento</h2>
+                        <p class="text-gray-600 text-lg mb-4">La producción técnica es el corazón de cualquier evento
+                            memorable. Es la que crea la atmósfera, asegura que el mensaje se escuche claro y fuerte, y
+                            genera un impacto visual que perdura en la memoria de los asistentes. En Grupo Siete,
+                            combinamos equipamiento de última generación con un equipo de técnicos expertos para
+                            garantizar una ejecución impecable.</p>
+                        <p class="text-gray-600 text-lg">Desde congresos y ferias hasta lanzamientos de producto y
+                            recitales, proveemos una solución integral que cubre todas las necesidades técnicas de tu
+                            producción.</p>
                     </div>
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
-                        <img src="../../assets/img/equipamientotecnico1_JPG.jpg" alt="Equipo técnico preparando un evento" class="w-full h-full object-cover">
+                        <img src="../../assets/img/equipamientotecnico1_JPG.jpg"
+                            alt="Equipo técnico preparando un evento" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -162,16 +226,20 @@
                     <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestros Servicios Técnicos</h2>
                     <p class="text-lg text-gray-600">Un portfolio completo para cubrir cada aspecto de tu evento.</p>
                 </div>
-                
+
                 <!-- Servicio 1: Sonido -->
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
-                        <img src="../../assets/img/consola2.png" alt="Sistema de sonido profesional en un evento" class="w-full h-full object-cover">
+                        <img src="../../assets/img/consola2.png" alt="Sistema de sonido profesional en un evento"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="text-left animate-on-scroll slide-in-from-right">
                         <i class="fas fa-volume-high text-3xl text-brand-green mb-4"></i>
                         <h3 class="text-3xl font-bold font-montserrat mb-4">Sonido Profesional</h3>
-                        <p class="text-gray-600 text-lg mb-4">Desde la claridad de la voz en una conferencia hasta la potencia de un recital, el sonido es clave. Contamos con sistemas Line Array de primeras marcas, consolas digitales, y una amplia gama de microfonía para garantizar que tu mensaje se escuche a la perfección.</p>
+                        <p class="text-gray-600 text-lg mb-4">Desde la claridad de la voz en una conferencia hasta la
+                            potencia de un recital, el sonido es clave. Contamos con sistemas Line Array de primeras
+                            marcas, consolas digitales, y una amplia gama de microfonía para garantizar que tu mensaje
+                            se escuche a la perfección.</p>
                         <div class="text-sm text-gray-500 space-y-1">
                             <p>• Sistemas Line Array: Nexo, Meyer Sound, D&B, JBL, L'Acoustics</p>
                             <p>• Consolas: Allen & Heath QU32, Yamaha CL5, Venue Profile</p>
@@ -183,12 +251,15 @@
                 <!-- Servicio 2: Iluminación -->
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right lg:order-2">
-                        <img src="../../assets/img/tarima_show.jpg" alt="Iluminación creativa en un escenario" class="w-full h-full object-cover">
+                        <img src="../../assets/img/tarima_show.jpg" alt="Iluminación creativa en un escenario"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="text-left animate-on-scroll slide-in-from-left lg:order-1">
                         <i class="fas fa-lightbulb text-3xl text-brand-green mb-4"></i>
                         <h3 class="text-3xl font-bold font-montserrat mb-4">Iluminación Escénica</h3>
-                        <p class="text-gray-600 text-lg mb-4">Transformamos espacios y generamos emociones a través de la luz. Contamos con cabezales móviles, PAR LEDs de alta potencia y consolas DMX profesionales para crear atmósferas únicas y memorables que dan vida a tu evento.</p>
+                        <p class="text-gray-600 text-lg mb-4">Transformamos espacios y generamos emociones a través de
+                            la luz. Contamos con cabezales móviles, PAR LEDs de alta potencia y consolas DMX
+                            profesionales para crear atmósferas únicas y memorables que dan vida a tu evento.</p>
                         <div class="text-sm text-gray-500 space-y-1">
                             <p>• Cabezales móviles Beam 5R, 7R, 10R • PAR 64 y Mini Brut x4</p>
                             <p>• Seguidor manual LED 450W • Máquinas de humo Martin Atomic</p>
@@ -200,12 +271,15 @@
                 <!-- Servicio 3: Pantallas y Video -->
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
-                        <img src="../../assets/img/pantalla_2.jpg" alt="Pantalla LED gigante en un evento" class="w-full h-full object-cover">
+                        <img src="../../assets/img/pantalla_2.jpg" alt="Pantalla LED gigante en un evento"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="text-left animate-on-scroll slide-in-from-right">
                         <i class="fas fa-tv text-3xl text-brand-green mb-4"></i>
                         <h3 class="text-3xl font-bold font-montserrat mb-4">Pantallas LED & Video</h3>
-                        <p class="text-gray-600 text-lg mb-4">Pantallas LED modulares con tecnología de vanguardia. Ofrecemos resoluciones hasta UHD 4K con brillo extremo para uso diurno y nocturno. Diseñamos contenido audiovisual personalizado para maximizar el impacto visual.</p>
+                        <p class="text-gray-600 text-lg mb-4">Pantallas LED modulares con tecnología de vanguardia.
+                            Ofrecemos resoluciones hasta UHD 4K con brillo extremo para uso diurno y nocturno. Diseñamos
+                            contenido audiovisual personalizado para maximizar el impacto visual.</p>
                         <div class="text-sm text-gray-500 space-y-1">
                             <p>• Pantallas LED pitch 3mm y 5mm Indoor/Outdoor</p>
                             <p>• Resoluciones hasta UHD 4K • Pantallas curvas y móviles</p>
@@ -217,12 +291,15 @@
                 <!-- Servicio 4: Escenarios y Estructuras -->
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right lg:order-2">
-                        <img src="../../assets/img/escenario_corporativo.jpg" alt="Escenario y tarima para eventos" class="w-full h-full object-cover">
+                        <img src="../../assets/img/escenario_corporativo.jpg" alt="Escenario y tarima para eventos"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="text-left animate-on-scroll slide-in-from-left lg:order-1">
                         <i class="fas fa-tools text-3xl text-brand-green mb-4"></i>
                         <h3 class="text-3xl font-bold font-montserrat mb-4">Escenarios & Estructuras</h3>
-                        <p class="text-gray-600 text-lg mb-4">Diseñamos y construimos tarimas, escenarios y estructuras modulares adaptadas a las necesidades específicas de tu evento. Desde pequeñas presentaciones hasta grandes espectáculos al aire libre.</p>
+                        <p class="text-gray-600 text-lg mb-4">Diseñamos y construimos tarimas, escenarios y estructuras
+                            modulares adaptadas a las necesidades específicas de tu evento. Desde pequeñas
+                            presentaciones hasta grandes espectáculos al aire libre.</p>
                         <div class="text-sm text-gray-500 space-y-1">
                             <p>• Tarimas modulares de diferentes alturas y tamaños</p>
                             <p>• Escenarios personalizados • Carpas y cubiertas</p>
@@ -239,9 +316,15 @@
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="text-left animate-on-scroll slide-in-from-left">
                         <span class="text-brand-green font-bold uppercase tracking-wider">Especialización</span>
-                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Eventos Masivos de Gran Escala</h2>
-                        <p class="text-gray-600 text-lg mb-4">En Grupo Siete nos especializamos en el desarrollo de eventos masivos para 25.000 personas o más. Desde el desarrollo del concepto del evento hasta la puesta en marcha, desarrollo técnico y el servicio de catering para artistas, expositores y sectores VIPs.</p>
-                        <p class="text-gray-600 text-lg mb-6">Nuestra vasta experiencia se centra en la organización de Ferias y Festivales Urbanos, en espacios públicos y privados. También contamos con Food Trucks para la venta de comidas a asistentes o el servicio de comidas contratado.</p>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Eventos Masivos de Gran
+                            Escala</h2>
+                        <p class="text-gray-600 text-lg mb-4">En Grupo Siete nos especializamos en el desarrollo de
+                            eventos masivos para 25.000 personas o más. Desde el desarrollo del concepto del evento
+                            hasta la puesta en marcha, desarrollo técnico y el servicio de catering para artistas,
+                            expositores y sectores VIPs.</p>
+                        <p class="text-gray-600 text-lg mb-6">Nuestra vasta experiencia se centra en la organización de
+                            Ferias y Festivales Urbanos, en espacios públicos y privados. También contamos con Food
+                            Trucks para la venta de comidas a asistentes o el servicio de comidas contratado.</p>
                         <ul class="space-y-4 text-gray-600 text-lg">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
@@ -267,7 +350,8 @@
                         </ul>
                     </div>
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
-                        <img src="../../assets/img/tarima_multitud.jpg" alt="Evento masivo con multitud" class="w-full h-full object-cover">
+                        <img src="../../assets/img/tarima_multitud.jpg" alt="Evento masivo con multitud"
+                            class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -278,28 +362,37 @@
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
                     <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Eventos que Producimos</h2>
-                    <p class="text-lg text-gray-600">Desde presentaciones íntimas hasta espectáculos masivos, tenemos la experiencia y el equipamiento para cualquier escala.</p>
+                    <p class="text-lg text-gray-600">Desde presentaciones íntimas hasta espectáculos masivos, tenemos la
+                        experiencia y el equipamiento para cualquier escala.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in"
+                        style="transition-delay: 100ms;">
                         <i class="fas fa-microphone text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-xl font-bold font-montserrat mb-2">Congresos & Conferencias</h4>
-                        <p class="text-gray-600 text-sm">Sonido cristalino para conferencias magistrales, traducción simultánea y presentaciones multimedia.</p>
+                        <p class="text-gray-600 text-sm">Sonido cristalino para conferencias magistrales, traducción
+                            simultánea y presentaciones multimedia.</p>
                     </div>
-                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in"
+                        style="transition-delay: 200ms;">
                         <i class="fas fa-music text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-xl font-bold font-montserrat mb-2">Recitales & Shows</h4>
-                        <p class="text-gray-600 text-sm">Sistemas de sonido potentes, iluminación escénica y escenarios diseñados para artistas y bandas.</p>
+                        <p class="text-gray-600 text-sm">Sistemas de sonido potentes, iluminación escénica y escenarios
+                            diseñados para artistas y bandas.</p>
                     </div>
-                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in"
+                        style="transition-delay: 300ms;">
                         <i class="fas fa-building text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-xl font-bold font-montserrat mb-2">Eventos Corporativos</h4>
-                        <p class="text-gray-600 text-sm">Lanzamientos, presentaciones empresariales, team buildings y celebraciones corporativas.</p>
+                        <p class="text-gray-600 text-sm">Lanzamientos, presentaciones empresariales, team buildings y
+                            celebraciones corporativas.</p>
                     </div>
-                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 400ms;">
+                    <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg animate-on-scroll scale-in"
+                        style="transition-delay: 400ms;">
                         <i class="fas fa-heart text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-xl font-bold font-montserrat mb-2">Eventos Sociales</h4>
-                        <p class="text-gray-600 text-sm">Bodas, quinceañeros, aniversarios y celebraciones familiares con producción personalizada.</p>
+                        <p class="text-gray-600 text-sm">Bodas, quinceañeros, aniversarios y celebraciones familiares
+                            con producción personalizada.</p>
                     </div>
                 </div>
             </div>
@@ -310,30 +403,35 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
-                        <img src="../../assets/img/equipamiento_tecnico.jpeg" alt="Técnico operando una consola de sonido" class="w-full h-full object-cover">
+                        <img src="../../assets/img/equipamiento_tecnico.jpeg"
+                            alt="Técnico operando una consola de sonido" class="w-full h-full object-cover">
                     </div>
                     <div class="text-left animate-on-scroll slide-in-from-right">
-                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Tecnología de punta con un equipo que responde</h2>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Tecnología de punta con un
+                            equipo que responde</h2>
                         <ul class="space-y-6 text-gray-600 text-lg">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
                                 <div>
                                     <h4 class="font-bold text-brand-dark">Planificación Detallada</h4>
-                                    <p>Realizamos un relevamiento técnico previo y diseño 3D del montaje para que no haya sorpresas el día del evento.</p>
+                                    <p>Realizamos un relevamiento técnico previo y diseño 3D del montaje para que no
+                                        haya sorpresas el día del evento.</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
                                 <div>
                                     <h4 class="font-bold text-brand-dark">Equipamiento de Primeras Marcas</h4>
-                                    <p>Trabajamos con marcas líderes como Meyer Sound, D&B, JBL, Allen & Heath y Yamaha para garantizar máxima calidad.</p>
+                                    <p>Trabajamos con marcas líderes como Meyer Sound, D&B, JBL, Allen & Heath y Yamaha
+                                        para garantizar máxima calidad.</p>
                                 </div>
                             </li>
-                             <li class="flex items-start">
+                            <li class="flex items-start">
                                 <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
                                 <div>
                                     <h4 class="font-bold text-brand-dark">Soporte Integral 24/7</h4>
-                                    <p>Nuestro equipo técnico especializado acompaña tu evento desde el montaje hasta el desmontaje, garantizando funcionamiento perfecto.</p>
+                                    <p>Nuestro equipo técnico especializado acompaña tu evento desde el montaje hasta el
+                                        desmontaje, garantizando funcionamiento perfecto.</p>
                                 </div>
                             </li>
                         </ul>
@@ -351,22 +449,34 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in col-span-2">
-                        <img src="../../assets/img/evento_grupoSiete.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Evento corporativo">
+                        <img src="../../assets/img/evento_grupoSiete.png"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                            alt="Evento corporativo">
                     </div>
                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
-                        <img src="../../assets/img/tarima_multitud.jpg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Concierto multitudinario">
+                        <img src="../../assets/img/tarima_multitud.jpg"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                            alt="Concierto multitudinario">
                     </div>
                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
-                        <img src="../../assets/img/escenario.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Escenario profesional">
+                        <img src="../../assets/img/escenario.png"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                            alt="Escenario profesional">
                     </div>
                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
-                        <img src="../../assets/img/pantalla_3.jpeg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Pantalla LED">
+                        <img src="../../assets/img/pantalla_3.jpeg"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                            alt="Pantalla LED">
                     </div>
                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in col-span-2">
-                        <img src="../../assets/img/evento3.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Evento tecnológico">
+                        <img src="../../assets/img/evento3.png"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                            alt="Evento tecnológico">
                     </div>
-                     <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
-                        <img src="../../assets/img/carpa_4.jpg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Carpa para eventos">
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../assets/img/carpa_4.jpg"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                            alt="Carpa para eventos">
                     </div>
                 </div>
             </div>
@@ -375,9 +485,13 @@
         <!-- ===== CTA FINAL ===== -->
         <section id="contacto" class="py-24 bg-white">
             <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Listo para que tu evento sea inolvidable?</h2>
-                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos para que nuestro equipo técnico te asesore y prepare un presupuesto personalizado sin compromiso.</p>
-                <a href="../contacto/" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">COTIZAR PRODUCCIÓN</a>
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Listo para que tu
+                    evento sea inolvidable?</h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos para que nuestro equipo técnico te
+                    asesore y prepare un presupuesto personalizado sin compromiso.</p>
+                <a href="../contacto/"
+                    class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">COTIZAR
+                    PRODUCCIÓN</a>
             </div>
         </section>
     </main>
@@ -387,16 +501,21 @@
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="flex items-center space-x-3 mb-4">
-                        <img src="/assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-8 w-auto">
-                        <h3 class="text-xl font-bold font-montserrat">GRUPO SIETE</h3>
-                    </div>
+                    <img src="/assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-8 w-auto">
+                    <h3 class="text-xl font-bold font-montserrat">GRUPO SIETE</h3>
+                </div>
                 <div>
                     <h4 class="font-bold mb-4">Navegación</h4>
                     <ul class="space-y-2">
-                        <li><a href="../gastronomia/catering_corporativo/" class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li>
-                        <li><a href="../gastronomia/comedores_institucionales/" class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li>
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="../nosotros/" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="../gastronomia/catering_corporativo/"
+                                class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li>
+                        <li><a href="../gastronomia/comedores_institucionales/"
+                                class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a>
+                        </li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a>
+                        </li>
+                        <li><a href="../nosotros/" class="text-gray-400 hover:text-white transition-colors">Nosotros</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -407,14 +526,18 @@
                         <li><i class="fas fa-phone w-5 mr-2"></i>+54 11 xxxx-xxxx</li>
                     </ul>
                     <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fab fa-linkedin text-xl"></i></a>
                     </div>
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Grupo Siete. Todos los derechos reservados. | <a href="../contacto/" class="hover:text-white">Contacto</a></p>
+                <p>&copy; 2025 Grupo Siete. Todos los derechos reservados. | <a href="../contacto/"
+                        class="hover:text-white">Contacto</a></p>
             </div>
         </div>
     </footer>
@@ -443,21 +566,22 @@
         const galleryItems = document.querySelectorAll('#gallery-grid > div');
         const galleryObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
-                if(entry.isIntersecting){
+                if (entry.isIntersecting) {
                     const items = entry.target.querySelectorAll('div');
-                     items.forEach((item, index) => {
+                    items.forEach((item, index) => {
                         item.style.transitionDelay = `${index * 100}ms`;
                         observer.unobserve(item);
                     });
                 }
             });
         }, { threshold: 0.1 });
-        
+
         const galleryGrid = document.getElementById('gallery-grid');
-        if(galleryGrid) {
+        if (galleryGrid) {
             galleryObserver.observe(galleryGrid);
         }
     </script>
 
 </body>
+
 </html>

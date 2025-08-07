@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos de Cine | Grupo Siete</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Estilos consistentes con el resto del sitio */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #212121;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-brand-green { background-color: #38A169; }
+        .text-brand-green { color: #38A169; }
+        .border-brand-green { border-color: #38A169; }
+        .hover\:bg-brand-green-dark:hover { background-color: #2F855A; }
+        .bg-brand-dark { background-color: #212121; }
+        .text-brand-dark { color: #212121; }
+        .bg-brand-light-gray { background-color: #F9FAFB; }
+
+        /* Clases para animaciones de entrada */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-from-left {
+            transform: translateX(-100px);
+        }
+        .slide-in-from-right {
+            transform: translateX(100px);
+        }
+        .scale-in {
+            transform: scale(0.9);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Estilo específico para el hero cinematográfico */
+        .cinema-hero {
+            background: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../" class="flex items-center space-x-3">
+                <img src="../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <a href="../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                        Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="../gastronomia/catering_corporativo/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="../gastronomia/comedores_institucionales/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
+                            <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+                <a href="../nosotros/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
+            </nav>
+            <a href="../contacto/" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
+            <a href="../eventos/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
+            <div class="border-b border-gray-100">
+                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
+                <a href="../gastronomia/catering_corporativo/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                </a>
+                <a href="../gastronomia/comedores_institucionales/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
+                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                </a>
+            </div>
+            <a href="../nosotros/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
+            <div class="p-4"><a href="../contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="h-screen bg-cover bg-center bg-fixed relative cinema-hero" style="background-image: url('../../assets/img/evento3.png');">
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                <div class="text-center text-white animate-on-scroll scale-in max-w-4xl mx-auto px-6">
+                    <div class="mb-6">
+                        <i class="fas fa-film text-6xl text-brand-green mb-4"></i>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black font-montserrat mb-6">Ciclos de Cine</h1>
+                    <p class="text-xl md:text-2xl mb-8">Donde el séptimo arte se encuentra con la gastronomía</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div class="bg-white/10 backdrop-blur-lg rounded-lg px-6 py-3">
+                            <span class="text-3xl font-bold text-brand-green">Cultura</span>
+                            <p class="text-sm">+ Gastronomía</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-lg px-6 py-3">
+                            <span class="text-3xl font-bold text-brand-green">Proyección</span>
+                            <p class="text-sm">Profesional</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-lg px-6 py-3">
+                            <span class="text-3xl font-bold text-brand-green">Experiencia</span>
+                            <p class="text-sm">Memorable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== QUÉ SON NUESTROS CICLOS DE CINE ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Eventos Culturales</span>
+                        <h2 class="text-4xl font-bold text-brand-dark mb-6 font-montserrat">El séptimo arte con experiencias gastronómicas únicas</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Organizamos <strong>ciclos cinematográficos y eventos culturales</strong> que combinan el cine con experiencias gastronómicas temáticas. Desde la producción técnica con sistemas de proyección profesional hasta el catering especializado, creamos veladas memorables que conectan cultura y gastronomía.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Cada proyección es mucho más que ver una película: es una <strong>experiencia sensorial completa</strong> donde el menú se inspira en la filmografía, la ambientación recrea épocas y estilos, y cada detalle está pensado para transportar al espectador más allá de la pantalla.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Proyección profesional</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Catering temático</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Ambientación especializada</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-2"></i>
+                                <span>Experiencia integral</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll slide-in-from-right">
+                        <img src="../../assets/img/pantalla_1.jpg" alt="Sistema de proyección profesional" class="rounded-xl shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NUESTROS SERVICIOS ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll scale-in">
+                    <span class="text-brand-green font-bold uppercase tracking-wider">Servicios Integrales</span>
+                    <h2 class="text-4xl font-bold text-brand-dark font-montserrat">Todo lo que necesitás para tu ciclo de cine</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Proyección Técnica -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-video text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 font-montserrat">Proyección Profesional</h3>
+                        <p class="text-gray-600 mb-4">Equipos de proyección de alta definición, pantallas de gran formato y sistemas de sonido envolvente para una experiencia cinematográfica superior.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Proyectores 4K</li>
+                            <li>• Pantallas gigantes</li>
+                            <li>• Sonido surround</li>
+                            <li>• Cine al aire libre</li>
+                        </ul>
+                    </div>
+
+                    <!-- Catering Temático -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 font-montserrat">Catering Temático</h3>
+                        <p class="text-gray-600 mb-4">Menús inspirados en las películas, épocas y géneros cinematográficos. Desde comida de época hasta creaciones modernas inspiradas en el séptimo arte.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Menús inspirados en filmes</li>
+                            <li>• Comida de época</li>
+                            <li>• Cocteles temáticos</li>
+                            <li>• Experiencias gastronómicas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ambientación -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-palette text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 font-montserrat">Ambientación Completa</h3>
+                        <p class="text-gray-600 mb-4">Diseño de espacios que transporten a los asistentes al mundo de la película, con decoración, iluminación y detalles que recrean atmósferas únicas.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Decoración temática</li>
+                            <li>• Iluminación especial</li>
+                            <li>• Escenografía</li>
+                            <li>• Detalles ambientales</li>
+                        </ul>
+                    </div>
+
+                    <!-- Programación Cultural -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll scale-in" style="transition-delay: 400ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 font-montserrat">Programación Cultural</h3>
+                        <p class="text-gray-600 mb-4">Curaduría especializada de contenidos, desde clásicos del cine hasta estrenos independientes, con charlas y actividades complementarias.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Curaduría cinematográfica</li>
+                            <li>• Charlas y debates</li>
+                            <li>• Encuentros con directores</li>
+                            <li>• Actividades interactivas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Producción Integral -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll scale-in" style="transition-delay: 500ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cogs text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 font-montserrat">Producción Integral</h3>
+                        <p class="text-gray-600 mb-4">Gestión completa del evento, desde la logística y permisos hasta la comunicación y promoción del ciclo cinematográfico.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Gestión de permisos</li>
+                            <li>• Logística completa</li>
+                            <li>• Marketing y promoción</li>
+                            <li>• Coordinación general</li>
+                        </ul>
+                    </div>
+
+                    <!-- Espacios Únicos -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll scale-in" style="transition-delay: 600ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 font-montserrat">Espacios Únicos</h3>
+                        <p class="text-gray-600 mb-4">Adaptamos cualquier espacio para crear salas de cine temporales: plazas, parques, teatros, centros culturales o locaciones especiales.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Cine en plazas públicas</li>
+                            <li>• Teatros y centros culturales</li>
+                            <li>• Locaciones históricas</li>
+                            <li>• Espacios corporativos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TIPOS DE EVENTOS ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll scale-in">
+                    <span class="text-brand-green font-bold uppercase tracking-wider">Diversidad de Propuestas</span>
+                    <h2 class="text-4xl font-bold text-brand-dark font-montserrat">Tipos de Eventos Cinematográficos</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Lista de eventos -->
+                    <div class="space-y-8 animate-on-scroll slide-in-from-left">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-green/10 text-brand-green rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-star text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Ciclos Temáticos</h3>
+                                <p class="text-gray-600">Desde cine clásico hasta géneros específicos como terror, ciencia ficción o cine de autor. Cada ciclo con su ambientación y catering especializado.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-green/10 text-brand-green rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-building text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Eventos Corporativos</h3>
+                                <p class="text-gray-600">Cine empresarial, presentaciones de productos con storytelling audiovisual, y eventos team building con experiencias cinematográficas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-green/10 text-brand-green rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Eventos Comunitarios</h3>
+                                <p class="text-gray-600">Cine en plazas públicas, festivales de barrio y eventos culturales que fortalecen el tejido social a través del arte cinematográfico.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-green/10 text-brand-green rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-heart text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-2 font-montserrat">Eventos Especiales</h3>
+                                <p class="text-gray-600">Celebraciones de fechas emblemáticas del cine, homenajes a directores, estrenos privados y eventos benéficos con propósitos sociales.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagen -->
+                    <div class="animate-on-scroll slide-in-from-right">
+                        <img src="../../assets/img/pantalla_2.jpg" alt="Evento de cine al aire libre" class="rounded-xl shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROCESO DE TRABAJO ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll scale-in">
+                    <span class="text-brand-green font-bold uppercase tracking-wider">Nuestro Proceso</span>
+                    <h2 class="text-4xl font-bold text-brand-dark font-montserrat">De la Idea a la Pantalla Grande</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-brand-dark mb-2 font-montserrat">Conceptualización</h3>
+                        <p class="text-gray-600 text-sm">Definimos temática, audiencia y objetivos del ciclo cinematográfico junto al cliente.</p>
+                    </div>
+
+                    <div class="text-center animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">2</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-brand-dark mb-2 font-montserrat">Curaduría</h3>
+                        <p class="text-gray-600 text-sm">Selección de películas, diseño de menús temáticos y planificación de la ambientación.</p>
+                    </div>
+
+                    <div class="text-center animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">3</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-brand-dark mb-2 font-montserrat">Producción</h3>
+                        <p class="text-gray-600 text-sm">Montaje técnico, preparación gastronómica y acondicionamiento del espacio.</p>
+                    </div>
+
+                    <div class="text-center animate-on-scroll scale-in" style="transition-delay: 400ms;">
+                        <div class="bg-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">4</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-brand-dark mb-2 font-montserrat">Experiencia</h3>
+                        <p class="text-gray-600 text-sm">Ejecución del evento con seguimiento en tiempo real para garantizar una experiencia memorable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA FINAL ===== -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6 font-montserrat">¿Listo para crear tu ciclo de cine?</h2>
+                    <p class="text-lg text-gray-600 mb-8">Contactanos y creemos juntos una experiencia cinematográfica que combine cultura, gastronomía y entretenimiento de la más alta calidad.</p>
+                    <a href="../contacto/" class="inline-block bg-brand-green text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                        Organizar Evento Cinematográfico <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3>
+                    <p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="../eventos/" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="../gastronomia/catering_corporativo/" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li>
+                        <li><a href="../nosotros/" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li>
+                        <li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li>
+                        <li><i class="fas fa-phone w-5 mr-2"></i>11 4508.9023</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Lógica para el menú móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // --- Lógica para las animaciones de aparición al hacer scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
