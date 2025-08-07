@@ -90,6 +90,15 @@
             transform: none;
         }
 
+        /* Rotación para chevron en menú móvil */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+
         /* Estilos para el Hero con video */
         .video-hero-container {
             height: 90vh;
@@ -123,7 +132,25 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
-                <a href="index.html" class="text-brand-green font-bold">Eventos</a>
+                
+                <!-- Dropdown Eventos -->
+                <div class="relative group">
+                    <button class="text-brand-green font-bold flex items-center">
+                        Eventos <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="index.html" class="block px-4 py-3 text-brand-green font-semibold bg-green-50 hover:bg-brand-light-gray transition-colors">
+                            <i class="fas fa-microphone w-5 mr-3 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="../feria_caravana/" class="block px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors border-b border-gray-100">
+                            <i class="fas fa-truck w-5 mr-3 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="../ciclos_de_cine/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-film w-5 mr-3 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="relative group">
                     <button
                         class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
@@ -154,25 +181,56 @@
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
-            <a href="index.html"
-                class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Eventos</a>
-            <div class="border-b border-gray-100">
-                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
-                <a href="../gastronomia/catering_corporativo/"
-                    class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200">
+            <div class="px-4 py-6">
+                <a href="../../" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-home w-5 mr-3 text-brand-green"></i>Inicio
                 </a>
-                <a href="../gastronomia/comedores_institucionales/"
-                    class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                
+                <!-- Gastronomía Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray rounded-lg transition-colors cursor-pointer" id="gastronomia-toggle">
+                        <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Gastronomía
+                        <i class="fas fa-chevron-down ml-auto text-xs transition-transform"></i>
+                    </div>
+                    <div class="ml-6 mt-1 space-y-1 hidden" id="gastronomia-submenu">
+                        <a href="../gastronomia/catering_corporativo/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="../gastronomia/comedores_institucionales/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Eventos Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-brand-green font-semibold bg-brand-light-gray rounded-lg">
+                        <i class="fas fa-calendar w-5 mr-3"></i>Eventos
+                        <i class="fas fa-chevron-down ml-auto text-xs"></i>
+                    </div>
+                    <div class="ml-6 mt-2 space-y-1">
+                        <a href="index.html" class="flex items-center py-2 px-4 text-brand-green font-semibold bg-green-50 rounded-md text-sm">
+                            <i class="fas fa-microphone w-4 mr-2 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="../feria_caravana/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-truck w-4 mr-2 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="../ciclos_de_cine/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-film w-4 mr-2 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../nosotros/" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-users w-5 mr-3 text-brand-green"></i>Nosotros
                 </a>
-            </div>
-            <a href="../nosotros/"
-                class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
-            <div class="p-4"><a href="../contacto/"
-                    class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a>
+                
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="../contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>COTIZÁ AHORA
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -310,8 +368,170 @@
             </div>
         </section>
 
-        <!-- ===== EVENTOS MASIVOS ===== -->
+        <!-- ===== CARPAS Y MOBILIARIO ===== -->
         <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="text-left animate-on-scroll slide-in-from-left">
+                        <i class="fas fa-campground text-3xl text-brand-green mb-4"></i>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Carpas y Mobiliario</h2>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Montaje de carpas de distintos tamaños y colores, estructuras y servicios adicionales para eventos. 
+                            Ofrecemos variedad de tipos de livings, sillas, sillones, Candy bar, sillas plegables, 
+                            mesas, camastos y banquetas altas entre otras cosas.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-brand-green mr-2"></i>
+                                    Carpas de diferentes tamaños
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-brand-green mr-2"></i>
+                                    Livings y sillones
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-brand-green mr-2"></i>
+                                    Candy bar completo
+                                </li>
+                            </ul>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-brand-green mr-2"></i>
+                                    Sillas plegables
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-brand-green mr-2"></i>
+                                    Mesas y camastos
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-brand-green mr-2"></i>
+                                    Banquetas altas
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 animate-on-scroll slide-in-from-right">
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="../../assets/img/evento_grupoSiete.png" alt="Living para eventos" class="w-full h-full object-cover">
+                        </div>
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="../../assets/img/caravana.png" alt="Carpa para eventos" class="w-full h-full object-cover">
+                        </div>
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="../../assets/img/mobiliario_evento.png" alt="Mobiliario exterior" class="w-full h-full object-cover">
+                        </div>
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="../../assets/img/evento3.png" alt="Candy bar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ESCENARIOS Y TARIMAS ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="grid grid-cols-2 gap-4 animate-on-scroll slide-in-from-left lg:order-1">
+                        <div class="overflow-hidden rounded-lg shadow-lg col-span-2">
+                            <img src="../../assets/img/escenario.png" alt="Escenario principal" class="w-full h-full object-cover">
+                        </div>
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="../../assets/img/tarima_show.jpg" alt="Tarima corporativa" class="w-full h-full object-cover">
+                        </div>
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img src="../../assets/img/pantalla_2.jpg" alt="Estructura con pantalla" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-right lg:order-2">
+                        <i class="fas fa-hammer text-3xl text-brand-green mb-4"></i>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Escenarios y Tarimas</h2>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Escenarios y tarimas con distintas posibilidades de diseños y tamaños, para interiores y exteriores, 
+                            con escaleras y rampas de acceso. Proporcionamos pasarelas, stands, gradas, tribunas, 
+                            vallas anti avalancha y otras estructuras.
+                        </p>
+                        <div class="space-y-4 text-gray-600">
+                            <div class="flex items-start">
+                                <i class="fas fa-tools text-brand-green mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark">Estructuras modulares</h4>
+                                    <p class="text-sm">Diseños personalizados para cada necesidad</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-stairs text-brand-green mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark">Accesibilidad completa</h4>
+                                    <p class="text-sm">Escaleras, rampas y accesos seguros</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-shield-alt text-brand-green mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark">Seguridad integral</h4>
+                                    <p class="text-sm">Vallas anti avalancha y estructuras certificadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CLIENTES Y EVENTOS DESTACADOS ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Clientes & Eventos Destacados</h2>
+                    <p class="text-lg text-gray-600">Nuestra experiencia respaldada por organizaciones de primer nivel</p>
+                </div>
+
+                <!-- Producción técnica para grandes artistas -->
+                <div class="mb-16 animate-on-scroll slide-in-from-left">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6 font-montserrat">Producción técnica para grandes artistas:</h3>
+                    <div class="bg-brand-light-gray p-6 rounded-lg">
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            <strong>Axel, Andrés Calamaro, Los Auténticos Decadentes, Kapanga, La Bomba de Tiempo, 
+                            Lali Espósito, Panam, Antonio Ríos, Catupecu Machu, Luciano Pereyra, Ricardo Montaner, 
+                            Marama Rombai</strong>, entre otros.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Eventos para organismos y privados -->
+                <div class="animate-on-scroll slide-in-from-right">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6 font-montserrat">Eventos para organismos y privados</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                        <ul class="space-y-2">
+                            <li>✦ Servicio de catering en el traspaso de mando presidencial 2023</li>
+                            <li>✦ Eventos de catering para el Ministerio de Relaciones Institucionales y Culto - 2023</li>
+                            <li>✦ Asunción Intendente de Ituzaingo</li>
+                            <li>✦ Asunción Intendente de Merlo</li>
+                            <li>✦ Viandas Elecciones para Correo Argentino e Indra</li>
+                            <li>✦ Estado en Tu Barrio – Municipalidad de Merlo</li>
+                            <li>✦ Evento MINURVI – 2023 y Encuentros regionales 2023. Ministerio de Hábitat</li>
+                            <li>✦ Programa Experiencia Buenos Aires Internacional -Secretaría General y de Relaciones Internacionales GCBA</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li>✦ GCBA Trophy World Cup, Predio AFA Ezeiza</li>
+                            <li>✦ Congreso PJ Bonaerense, Hurlingham y DirectTV Arena</li>
+                            <li>✦ Carnavales de La Matanza</li>
+                            <li>✦ Evento de Participación Ciudadana "Gobernar con los vecinos" - GCBA</li>
+                            <li>✦ Evento Workshop con Banco Mundial - GCBA</li>
+                            <li>✦ Evento Encuentro Regional de las Américas - Ministerio del Modernización</li>
+                            <li>✦ Ronda de Negocios Multisectorial La Matanza</li>
+                            <li>✦ Producción -Municipalidad de la Matanza</li>
+                            <li>✦ Festival día del padre - Municipalidad del Hurlingham</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EVENTOS MASIVOS ===== -->
+        <section class="py-20 bg-brand-light-gray">
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="text-left animate-on-scroll slide-in-from-left">
@@ -498,57 +718,43 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-8">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-8 w-auto">
+                        <img src="../../assets/img/Logo G7 3D sin fondo.png" alt="Grupo Siete Logo" class="h-8 w-auto">
                         <h3 class="text-xl font-bold font-montserrat">GRUPO SIETE</h3>
                     </div>
-                    <p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p>
+                    <p class="text-gray-400 text-sm mb-4">Soluciones integrales en gastronomía y producción de eventos</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Navegación</h4>
-                    <ul class="space-y-2">
-                        <li><a href="./"
-                                class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="../gastronomia/catering_corporativo/"
-                                class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li>
-                        <li><a href="../gastronomia/comedores_institucionales/"
-                                class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li>
-                        <li><a href="../feria_caravana/"
-                                class="text-gray-400 hover:text-white transition-colors">Feria Caravana</a></li>
-                        <li><a href="../ciclos_de_cine/"
-                                class="text-gray-400 hover:text-white transition-colors">Ciclos de Cine</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Nosotros</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../nosotros/"
-                                class="text-gray-400 hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="../contacto/"
-                                class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    <h4 class="font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="../gastronomia/catering_corporativo/" class="text-gray-400 hover:text-brand-green transition-colors">Catering Corporativo</a></li>
+                        <li><a href="../gastronomia/comedores_institucionales/" class="text-gray-400 hover:text-brand-green transition-colors">Comedores Institucionales</a></li>
+                        <li><a href="index.html" class="text-brand-green hover:text-white transition-colors font-semibold">Producción de Eventos</a></li>
+                        <li><a href="../feria_caravana/" class="text-gray-400 hover:text-pink-400 transition-colors">Feria Caravana</a></li>
+                        <li><a href="../ciclos_de_cine/" class="text-gray-400 hover:text-brand-green transition-colors">Ciclos de Cine</a></li>
+                        <li><a href="../nosotros/" class="text-gray-400 hover:text-brand-green transition-colors">Nosotros</a></li>
+                        <li><a href="../contacto/" class="text-gray-400 hover:text-brand-green transition-colors">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li>
-                        <li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li>
-                        <li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt w-4 mr-2"></i>Buenos Aires</li>
+                        <li><i class="fas fa-envelope w-4 mr-2"></i>info@grupo7.com.ar</li>
+                        <li><i class="fas fa-phone w-4 mr-2"></i>+54 2494 123456</li>
                     </ul>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-instagram text-xl"></i></a>
-                    </div>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Grupo Siete. Todos los derechos reservados. | <a href="#"
-                        class="hover:text-white">Política de Privacidad</a></p>
+            <div class="mt-6 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
+                <p>&copy; 2024 Grupo Siete. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -557,7 +763,22 @@
         // --- Lógica para el menú móvil ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        const gastronomiaSubmenu = document.getElementById('gastronomia-submenu');
+        
+        mobileMenuButton.addEventListener('click', () => { 
+            mobileMenu.classList.toggle('hidden'); 
+        });
+
+        // Toggle submenu gastronomia en mobile
+        const gastronomiaToggle = document.getElementById('gastronomia-toggle');
+        if (gastronomiaToggle && gastronomiaSubmenu) {
+            gastronomiaToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                gastronomiaSubmenu.classList.toggle('hidden');
+                const chevron = gastronomiaToggle.querySelector('.fa-chevron-down');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        }
 
         // --- Lógica para las animaciones de aparición al hacer scroll ---
         const observer = new IntersectionObserver((entries) => {

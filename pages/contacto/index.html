@@ -48,6 +48,16 @@
             opacity: 1;
             transform: none;
         }
+
+        /* Rotación para chevron en menú móvil */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+
         /* Estilos para el formulario mejorado */
         .form-input, .form-textarea {
             @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green transition-shadow;
@@ -78,6 +88,25 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                
+                <!-- Dropdown Eventos -->
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                        Eventos <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="../eventos/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-microphone w-5 mr-3 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="../feria_caravana/" class="block px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors border-b border-gray-100">
+                            <i class="fas fa-truck w-5 mr-3 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="../ciclos_de_cine/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-film w-5 mr-3 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="relative group">
                     <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
                         Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -91,7 +120,6 @@
                         </a>
                     </div>
                 </div>
-                <a href="../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
                 <a href="../nosotros/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
             </nav>
             <a href="index.html" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg ring-2 ring-offset-2 ring-brand-green">COTIZÁ</a>
@@ -99,20 +127,57 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
-            <div class="border-b border-gray-100">
-                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
-                <a href="../gastronomia/catering_corporativo/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200">
+            <div class="px-4 py-6">
+                <a href="../../" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-home w-5 mr-3 text-brand-green"></i>Inicio
                 </a>
-                <a href="../gastronomia/comedores_institucionales/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                
+                <!-- Gastronomía Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray rounded-lg transition-colors cursor-pointer" id="gastronomia-toggle">
+                        <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Gastronomía
+                        <i class="fas fa-chevron-down ml-auto text-xs transition-transform"></i>
+                    </div>
+                    <div class="ml-6 mt-1 space-y-1 hidden" id="gastronomia-submenu">
+                        <a href="../gastronomia/catering_corporativo/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="../gastronomia/comedores_institucionales/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Eventos Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray rounded-lg transition-colors cursor-pointer" id="eventos-toggle">
+                        <i class="fas fa-calendar w-5 mr-3 text-brand-green"></i>Eventos
+                        <i class="fas fa-chevron-down ml-auto text-xs transition-transform"></i>
+                    </div>
+                    <div class="ml-6 mt-1 space-y-1 hidden" id="eventos-submenu">
+                        <a href="../eventos/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-microphone w-4 mr-2 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="../feria_caravana/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-truck w-4 mr-2 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="../ciclos_de_cine/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-film w-4 mr-2 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../nosotros/" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-users w-5 mr-3 text-brand-green"></i>Nosotros
                 </a>
+                
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="index.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>COTIZÁ AHORA
+                    </a>
+                </div>
             </div>
-            <a href="../eventos/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
-            <a href="../nosotros/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
-            <div class="p-4"><a href="index.html" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
         </div>
     </header>
 
@@ -226,57 +291,43 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-8">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-8 w-auto">
+                        <img src="../../assets/img/Logo G7 3D sin fondo.png" alt="Grupo Siete Logo" class="h-8 w-auto">
                         <h3 class="text-xl font-bold font-montserrat">GRUPO SIETE</h3>
                     </div>
-                    <p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p>
+                    <p class="text-gray-400 text-sm mb-4">Soluciones integrales en gastronomía y producción de eventos</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Navegación</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../eventos/"
-                                class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="../gastronomia/catering_corporativo/"
-                                class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li>
-                        <li><a href="../gastronomia/comedores_institucionales/"
-                                class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li>
-                        <li><a href="../feria_caravana/"
-                                class="text-gray-400 hover:text-white transition-colors">Feria Caravana</a></li>
-                        <li><a href="../ciclos_de_cine/"
-                                class="text-gray-400 hover:text-white transition-colors">Ciclos de Cine</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Nosotros</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../nosotros/"
-                                class="text-gray-400 hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="./"
-                                class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    <h4 class="font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="../gastronomia/catering_corporativo/" class="text-gray-400 hover:text-brand-green transition-colors">Catering Corporativo</a></li>
+                        <li><a href="../gastronomia/comedores_institucionales/" class="text-gray-400 hover:text-brand-green transition-colors">Comedores Institucionales</a></li>
+                        <li><a href="../eventos/" class="text-gray-400 hover:text-brand-green transition-colors">Producción de Eventos</a></li>
+                        <li><a href="../feria_caravana/" class="text-gray-400 hover:text-pink-400 transition-colors">Feria Caravana</a></li>
+                        <li><a href="../ciclos_de_cine/" class="text-gray-400 hover:text-brand-green transition-colors">Ciclos de Cine</a></li>
+                        <li><a href="../nosotros/" class="text-gray-400 hover:text-brand-green transition-colors">Nosotros</a></li>
+                        <li><a href="index.html" class="text-brand-green hover:text-white transition-colors font-semibold">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li>
-                        <li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li>
-                        <li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt w-4 mr-2"></i>Buenos Aires</li>
+                        <li><i class="fas fa-envelope w-4 mr-2"></i>info@grupo7.com.ar</li>
+                        <li><i class="fas fa-phone w-4 mr-2"></i>+54 2494 123456</li>
                     </ul>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-instagram text-xl"></i></a>
-                    </div>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Grupo Siete. Todos los derechos reservados. | <a href="#"
-                        class="hover:text-white">Política de Privacidad</a></p>
+            <div class="mt-6 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
+                <p>&copy; 2024 Grupo Siete. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -285,7 +336,34 @@
         // --- Lógica para el menú móvil ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        const gastronomiaSubmenu = document.getElementById('gastronomia-submenu');
+        const eventosSubmenu = document.getElementById('eventos-submenu');
+        
+        mobileMenuButton.addEventListener('click', () => { 
+            mobileMenu.classList.toggle('hidden'); 
+        });
+
+        // Toggle submenu gastronomia en mobile
+        const gastronomiaToggle = document.getElementById('gastronomia-toggle');
+        if (gastronomiaToggle && gastronomiaSubmenu) {
+            gastronomiaToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                gastronomiaSubmenu.classList.toggle('hidden');
+                const chevron = gastronomiaToggle.querySelector('.fa-chevron-down');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        }
+
+        // Toggle submenu eventos en mobile
+        const eventosToggle = document.getElementById('eventos-toggle');
+        if (eventosToggle && eventosSubmenu) {
+            eventosToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                eventosSubmenu.classList.toggle('hidden');
+                const chevron = eventosToggle.querySelector('.fa-chevron-down');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        }
 
         // --- Lógica para las animaciones de aparición al hacer scroll ---
         const observer = new IntersectionObserver((entries) => {

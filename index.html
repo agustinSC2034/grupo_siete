@@ -179,8 +179,25 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-brand-green font-bold">Inicio</a>
-                <a href="pages/eventos/"
-                    class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
+                
+                <!-- Dropdown Eventos -->
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                        Eventos <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="pages/eventos/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-microphone w-5 mr-3 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="pages/feria_caravana/" class="block px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors border-b border-gray-100">
+                            <i class="fas fa-truck w-5 mr-3 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="pages/ciclos_de_cine/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-film w-5 mr-3 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="relative group">
                     <button
                         class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
@@ -212,92 +229,134 @@
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="index.html"
-                class="block text-center py-3 px-4 text-brand-green font-bold bg-brand-light-gray">Inicio</a>
-            <div class="border-b border-gray-100">
-                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
-                <a href="pages/gastronomia/catering_corporativo/"
-                    class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200">
+            <div class="px-4 py-6">
+                <a href="index.html" class="flex items-center py-3 px-4 text-brand-green font-semibold bg-brand-light-gray rounded-lg mb-2">
+                    <i class="fas fa-home w-5 mr-3 text-brand-green"></i>Inicio
                 </a>
-                <a href="pages/gastronomia/comedores_institucionales/"
-                    class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                
+                <!-- Gastronomía Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray rounded-lg transition-colors cursor-pointer" id="gastronomia-toggle">
+                        <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Gastronomía
+                        <i class="fas fa-chevron-down ml-auto text-xs transition-transform"></i>
+                    </div>
+                    <div class="ml-6 mt-1 space-y-1 hidden" id="gastronomia-submenu">
+                        <a href="pages/gastronomia/catering_corporativo/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="pages/gastronomia/comedores_institucionales/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Eventos Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray rounded-lg transition-colors cursor-pointer" id="eventos-toggle">
+                        <i class="fas fa-calendar w-5 mr-3 text-brand-green"></i>Eventos
+                        <i class="fas fa-chevron-down ml-auto text-xs transition-transform"></i>
+                    </div>
+                    <div class="ml-6 mt-1 space-y-1 hidden" id="eventos-submenu">
+                        <a href="pages/eventos/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-microphone w-4 mr-2 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="pages/feria_caravana/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-truck w-4 mr-2 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="pages/ciclos_de_cine/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-film w-4 mr-2 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+
+                <a href="pages/nosotros/" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-users w-5 mr-3 text-brand-green"></i>Nosotros
                 </a>
-            </div>
-            <a href="pages/eventos/"
-                class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
-            <a href="pages/nosotros/"
-                class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
-            <div class="p-4"><a href="pages/contacto/"
-                    class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a>
+                
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="pages/contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>COTIZÁ AHORA
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- ===== HERO SECTION ===== -->
-        <section id="inicio" class="min-h-screen pt-24 md:pt-32 flex items-center bg-brand-light-gray">
-            <div class="container mx-auto px-6 text-center">
-                <div class="max-w-4xl mx-auto">
-                    <h1 class="text-4xl md:text-6xl font-black text-brand-dark mb-4 font-montserrat leading-tight">
-                        Producción de Eventos &<br>
-                        Soluciones Gastronómicas.
-                    </h1>
-                    <br>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-                    <!-- TARJETA EVENTOS -->
-                    <a href="pages/eventos/"
-                        class="group block rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
-                        <div class="h-96 bg-cover bg-center relative"
-                            style="background-image: url('assets/img/evento_grupoSiete.png')">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center p-8">
-                                <div class="text-center w-full">
-                                    <h2 class="text-white text-3xl md:text-4xl font-bold font-montserrat mb-3">
-                                        Producción de Eventos</h2>
-                                    <p class="text-white/90 text-sm md:text-base mb-6 max-w-sm mx-auto" style="color: white;">Equipamiento
-                                        audiovisual y producción técnica integral</p>
-                                    <div
-                                        class="bg-white text-brand-dark font-bold py-2 px-4 text-sm md:text-base rounded-lg inline-block group-hover:bg-gray-200 transition-colors duration-300">
-                                        Descubrir Servicios</div>
-                                </div>
+        <!-- ===== HERO SECTION CON IMÁGENES ALTERNADAS ===== -->
+        <section id="inicio" class="relative h-screen overflow-hidden">
+            <!-- Imagen de Catering -->
+            <div id="image-catering" class="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-700 ease-in-out" style="background-image: url('assets/img/cateringHD.png'); will-change: opacity;"></div>
+            
+            <!-- Imagen de Eventos/Grupo7 -->
+            <div id="image-eventos" class="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-700 ease-in-out opacity-0" style="background-image: url('assets/img/evento_grupoSiete.png'); will-change: opacity;"></div>
+            
+            <!-- Overlay con gradiente -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60"></div>
+            
+            <!-- Contenido dinámico -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="container mx-auto px-6 text-center">
+                    
+                    <!-- Contenido para Catering -->
+                    <div id="content-catering" class="transition-all duration-500 ease-in-out transform" style="will-change: opacity, transform;">
+                        <div class="max-w-5xl mx-auto">
+                            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 font-montserrat leading-tight">
+                                Soluciones<br>
+                                <span class="text-brand-green">Gastronómicas</span>
+                            </h1>
+                            <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+                                Comedores institucionales y catering corporativo que transforman la experiencia alimentaria de tu organización
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="pages/gastronomia/catering_corporativo/" class="bg-brand-green text-white font-bold text-lg py-4 px-8 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-utensils mr-2"></i>Catering Corporativo
+                                </a>
+                                <a href="pages/gastronomia/comedores_institucionales/" class="bg-white/20 backdrop-blur-sm text-white font-bold text-lg py-4 px-8 rounded-lg shadow-xl hover:bg-white/30 transition-all duration-300 transform hover:scale-105 border border-white/20">
+                                    <i class="fas fa-building mr-2"></i>Comedores Institucionales
+                                </a>
                             </div>
                         </div>
-                    </a>
-                    <!-- TARJETA GASTRONOMÍA -->
-                    <div
-                        class="group block rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
-                        <div class="h-96 bg-cover bg-center relative"
-                            style="background-image: url('assets/img/cateringHD.png')">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center p-8">
-                                <div class="text-center w-full">
-                                    <h2 class="text-white text-3xl md:text-4xl font-bold font-montserrat mb-3">
-                                        Soluciones Gastronómicas</h2>
-                                    <p class="text-white/90 text-sm md:text-base mb-6 max-w-sm mx-auto">Comedores
-                                        institucionales y catering corporativo de excelencia</p>
-                                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                                        <a href="pages/gastronomia/catering_corporativo/"
-                                            class="bg-brand-green text-white font-bold py-2 px-4 text-sm md:text-base rounded-lg hover:bg-brand-green-dark transition-colors duration-300">
-                                            Catering Corporativo
-                                        </a>
-                                        <a href="pages/gastronomia/comedores_institucionales/"
-                                            class="bg-white text-brand-dark font-bold py-2 px-4 text-sm md:text-base rounded-lg hover:bg-gray-200 transition-colors duration-300">
-                                            Comedores Institucionales
-                                        </a>
-                                    </div>
-                                </div>
+                    </div>
+                    
+                    <!-- Contenido para Eventos (oculto inicialmente) -->
+                    <div id="content-eventos" class="transition-all duration-500 ease-in-out transform opacity-0 absolute inset-0 flex items-center justify-center" style="will-change: opacity, transform;">
+                        <div class="max-w-5xl mx-auto">
+                            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 font-montserrat leading-tight">
+                                Producción de<br>
+                                <span class="text-brand-green">Eventos</span>
+                            </h1>
+                            <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+                                Equipamiento audiovisual, sonido, iluminación y producción técnica integral para eventos únicos e inolvidables
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="pages/eventos/" class="bg-brand-green text-white font-bold text-lg py-4 px-8 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-microphone mr-2"></i>Producción de Eventos
+                                </a>
+                                <a href="pages/feria_caravana/" class="bg-pink-500 text-white font-bold text-lg py-4 px-8 rounded-lg shadow-xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-truck mr-2"></i>Feria Caravana
+                                </a>
+                                <a href="pages/ciclos_de_cine/" class="bg-white/20 backdrop-blur-sm text-white font-bold text-lg py-4 px-8 rounded-lg shadow-xl hover:bg-white/30 transition-all duration-300 transform hover:scale-105 border border-white/20">
+                                    <i class="fas fa-film mr-2"></i>Ciclos de Cine
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Indicadores de progreso -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                <div id="indicator-catering" class="w-3 h-3 rounded-full bg-white transition-all duration-300"></div>
+                <div id="indicator-eventos" class="w-3 h-3 rounded-full bg-white/40 transition-all duration-300"></div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 right-8 animate-bounce">
+                <i class="fas fa-chevron-down text-white text-2xl"></i>
+            </div>
         </section>
-        <br><br>
         <!-- ===== PRUEBA SOCIAL (CLIENTES) ===== -->
         <section class="py-20 bg-white overflow-hidden fade-in-section">
             <div class="container mx-auto px-6">
@@ -583,57 +642,43 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-8">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-8 w-auto">
+                        <img src="assets/img/Logo G7 3D sin fondo.png" alt="Grupo Siete Logo" class="h-8 w-auto">
                         <h3 class="text-xl font-bold font-montserrat">GRUPO SIETE</h3>
                     </div>
-                    <p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p>
+                    <p class="text-gray-400 text-sm mb-4">Soluciones integrales en gastronomía y producción de eventos</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Navegación</h4>
-                    <ul class="space-y-2">
-                        <li><a href="pages/eventos/"
-                                class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="pages/gastronomia/catering_corporativo/"
-                                class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li>
-                        <li><a href="pages/gastronomia/comedores_institucionales/"
-                                class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li>
-                        <li><a href="pages/feria_caravana/"
-                                class="text-gray-400 hover:text-white transition-colors">Feria Caravana</a></li>
-                        <li><a href="pages/ciclos_de_cine/"
-                                class="text-gray-400 hover:text-white transition-colors">Ciclos de Cine</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Nosotros</h4>
-                    <ul class="space-y-2">
-                        <li><a href="pages/nosotros/"
-                                class="text-gray-400 hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="pages/contacto/"
-                                class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    <h4 class="font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="pages/gastronomia/catering_corporativo/index.html" class="text-gray-400 hover:text-brand-green transition-colors">Catering Corporativo</a></li>
+                        <li><a href="pages/gastronomia/comedores_institucionales/index.html" class="text-gray-400 hover:text-brand-green transition-colors">Comedores Institucionales</a></li>
+                        <li><a href="pages/eventos/index.html" class="text-gray-400 hover:text-brand-green transition-colors">Producción de Eventos</a></li>
+                        <li><a href="pages/feria_caravana/index.html" class="text-gray-400 hover:text-pink-400 transition-colors">Feria Caravana</a></li>
+                        <li><a href="pages/ciclos_de_cine/index.html" class="text-gray-400 hover:text-brand-green transition-colors">Ciclos de Cine</a></li>
+                        <li><a href="pages/nosotros/index.html" class="text-gray-400 hover:text-brand-green transition-colors">Nosotros</a></li>
+                        <li><a href="pages/contacto/index.html" class="text-gray-400 hover:text-brand-green transition-colors">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li>
-                        <li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li>
-                        <li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt w-4 mr-2"></i>Buenos Aires</li>
+                        <li><i class="fas fa-envelope w-4 mr-2"></i>info@grupo7.com.ar</li>
+                        <li><i class="fas fa-phone w-4 mr-2"></i>+54 2494 123456</li>
                     </ul>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-instagram text-xl"></i></a>
-                    </div>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Grupo Siete. Todos los derechos reservados. | <a href="#"
-                        class="hover:text-white">Política de Privacidad</a></p>
+            <div class="mt-6 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
+                <p>&copy; 2024 Grupo Siete. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -642,24 +687,136 @@
         // --- Lógica para el menú móvil ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        
+        mobileMenuButton.addEventListener('click', () => { 
+            mobileMenu.classList.toggle('hidden'); 
+        });
 
-        // --- Lógica para las animaciones de aparición al hacer scroll ---
+        // Toggle submenu gastronomía en mobile
+        const gastronomiaToggle = document.getElementById('gastronomia-toggle');
+        const gastronomiaSubmenu = document.getElementById('gastronomia-submenu');
+        if (gastronomiaToggle && gastronomiaSubmenu) {
+            gastronomiaToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                gastronomiaSubmenu.classList.toggle('hidden');
+                const chevron = gastronomiaToggle.querySelector('.fa-chevron-down');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        }
+
+        // Toggle submenu eventos en mobile
+        const eventosToggle = document.getElementById('eventos-toggle');
+        const eventosSubmenu = document.getElementById('eventos-submenu');
+        if (eventosToggle && eventosSubmenu) {
+            eventosToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                eventosSubmenu.classList.toggle('hidden');
+                const chevron = eventosToggle.querySelector('.fa-chevron-down');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        }
+
+        // --- Lógica para el Hero con Imágenes Alternadas (Optimizada) ---
+        let currentImage = 'catering';
+        let isTransitioning = false;
+        const SWITCH_TIME = 4000; // 4 segundos por imagen
+        
+        const imageCatering = document.getElementById('image-catering');
+        const imageEventos = document.getElementById('image-eventos');
+        const contentCatering = document.getElementById('content-catering');
+        const contentEventos = document.getElementById('content-eventos');
+        const indicatorCatering = document.getElementById('indicator-catering');
+        const indicatorEventos = document.getElementById('indicator-eventos');
+
+        function switchImage() {
+            if (isTransitioning) return; // Prevenir múltiples transiciones simultáneas
+            isTransitioning = true;
+            
+            if (currentImage === 'catering') {
+                // Cambiar a eventos
+                currentImage = 'eventos';
+                
+                // Transición simultánea de imágenes y contenido
+                requestAnimationFrame(() => {
+                    // Cambiar imágenes
+                    imageCatering.style.opacity = '0';
+                    imageEventos.style.opacity = '1';
+                    
+                    // Cambiar contenido de forma simultánea
+                    contentCatering.style.opacity = '0';
+                    contentCatering.style.transform = 'translateY(20px)';
+                    
+                    contentEventos.style.opacity = '1';
+                    contentEventos.style.transform = 'translateY(0)';
+                    
+                    // Cambiar indicadores
+                    indicatorCatering.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                    indicatorEventos.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                });
+                
+            } else {
+                // Cambiar a catering
+                currentImage = 'catering';
+                
+                // Transición simultánea
+                requestAnimationFrame(() => {
+                    // Cambiar imágenes
+                    imageEventos.style.opacity = '0';
+                    imageCatering.style.opacity = '1';
+                    
+                    // Cambiar contenido de forma simultánea
+                    contentEventos.style.opacity = '0';
+                    contentEventos.style.transform = 'translateY(20px)';
+                    
+                    contentCatering.style.opacity = '1';
+                    contentCatering.style.transform = 'translateY(0)';
+                    
+                    // Cambiar indicadores
+                    indicatorEventos.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                    indicatorCatering.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                });
+            }
+            
+            // Liberar el lock después de la transición
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 700); // Tiempo de duración de la transición CSS
+        }
+
+        // Iniciar alternancia automática cada 4 segundos
+        setInterval(switchImage, SWITCH_TIME);
+
+        // --- Lógica optimizada para las animaciones de aparición al hacer scroll ---
         const sections = document.querySelectorAll('.fade-in-section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add('is-visible');
+                    });
+                    observer.unobserve(entry.target); // Optimización: desobservar después de animar
                 }
             });
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '50px' // Empezar la animación un poco antes
+        });
         sections.forEach(section => { observer.observe(section); });
 
-        // --- Lógica para cambiar el fondo del header al hacer scroll ---
+        // --- Lógica optimizada para cambiar el fondo del header al hacer scroll ---
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
+        let ticking = false;
+        
+        function updateHeader() {
             header.classList.toggle('shadow-xl', window.scrollY > 50);
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
         });
 
         // --- Lógica para el Image Comparison Slider ---

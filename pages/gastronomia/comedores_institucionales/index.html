@@ -2,8 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wi        <!-- ===== HERO SECTION DE LA PÁGINA ===== -->
-        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('../../../assets/img/comedor_instittucional3.png')">h=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comedores Institucionales | Grupo Siete</title>
     
     <!-- Tailwind CSS -->
@@ -55,6 +54,15 @@
             opacity: 1;
             transform: none;
         }
+
+        /* Rotación para chevron en menú móvil */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -68,13 +76,31 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="../../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
-                <a href="../../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
+                
+                <!-- Dropdown Eventos -->
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-brand-green transition-colors duration-300 flex items-center">
+                        Eventos <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="../../eventos/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-microphone w-5 mr-3 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="../../feria_caravana/" class="block px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors border-b border-gray-100">
+                            <i class="fas fa-truck w-5 mr-3 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="../../ciclos_de_cine/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
+                            <i class="fas fa-film w-5 mr-3 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="relative group">
                     <button class="text-brand-green font-bold flex items-center">
                         Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
                     <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors bg-brand-light-gray">
+                        <a href="index.html" class="block px-4 py-3 text-brand-green font-semibold bg-green-50 hover:bg-brand-light-gray transition-colors">
                             <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
                         </a>
                         <a href="../catering_corporativo/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
@@ -89,31 +115,69 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="../../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
-            <div class="border-b border-gray-100">
-                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
-                <a href="../catering_corporativo/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
-                    <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200">
+            <div class="px-4 py-6">
+                <a href="../../../" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-home w-5 mr-3 text-brand-green"></i>Inicio
                 </a>
-                <a href="index.html" class="block py-2 px-8 text-brand-green hover:bg-brand-light-gray text-sm font-semibold bg-brand-light-gray">
-                    <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                
+                <!-- Gastronomía Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-brand-green font-semibold bg-brand-light-gray rounded-lg">
+                        <i class="fas fa-utensils w-5 mr-3"></i>Gastronomía
+                        <i class="fas fa-chevron-down ml-auto text-xs"></i>
+                    </div>
+                    <div class="ml-6 mt-2 space-y-1">
+                        <a href="../catering_corporativo/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
+                        </a>
+                        <a href="index.html" class="flex items-center py-2 px-4 text-brand-green font-semibold bg-green-50 rounded-md text-sm">
+                            <i class="fas fa-building w-4 mr-2 text-brand-green"></i>Comedores Institucionales
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Eventos Expandible -->
+                <div class="mb-2">
+                    <div class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray rounded-lg transition-colors cursor-pointer" id="eventos-toggle">
+                        <i class="fas fa-calendar w-5 mr-3 text-brand-green"></i>Eventos
+                        <i class="fas fa-chevron-down ml-auto text-xs transition-transform"></i>
+                    </div>
+                    <div class="ml-6 mt-1 space-y-1 hidden" id="eventos-submenu">
+                        <a href="../../eventos/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-microphone w-4 mr-2 text-brand-green"></i>Producción de Eventos
+                        </a>
+                        <a href="../../feria_caravana/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-truck w-4 mr-2 text-pink-500"></i>Feria Caravana
+                        </a>
+                        <a href="../../ciclos_de_cine/" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-md text-sm transition-colors">
+                            <i class="fas fa-film w-4 mr-2 text-brand-green"></i>Ciclos de Cine
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../../nosotros/" class="flex items-center py-3 px-4 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green rounded-lg transition-colors mb-2">
+                    <i class="fas fa-users w-5 mr-3 text-brand-green"></i>Nosotros
                 </a>
+                
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="../../contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>COTIZÁ AHORA
+                    </a>
+                </div>
             </div>
-            <a href="../../eventos/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Eventos</a>
-            <a href="../../nosotros/" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Nosotros</a>
-            <div class="p-4"><a href="../../contacto/" class="block text-center bg-brand-green text-white font-bold py-3 px-6 rounded-lg shadow-lg w-full">COTIZÁ</a></div>
         </div>
     </header>
 
     <main>
         <!-- ===== HERO SECTION DE LA PÁGINA ===== -->
-        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('../../../assets/img/comedor_corporativo.jpg')">
-            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                <div class="text-center text-white p-6">
+        <section class="min-h-screen bg-cover bg-center bg-fixed relative flex items-center" style="background-image: url('../../../assets/img/catering_corporativo60.png')">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="container mx-auto px-6 text-center text-white relative z-10">
+                <div class="max-w-4xl mx-auto">
                     <span class="text-lg font-semibold uppercase tracking-widest animate-on-scroll scale-in is-visible" style="transition-delay: 200ms;">Gastronomía Institucional</span>
-                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat animate-on-scroll scale-in is-visible" style="transition-delay: 400ms;">Comedores que Nutren y Motivan</h1>
-                    <p class="text-xl mt-4 animate-on-scroll scale-in is-visible" style="transition-delay: 600ms;">Soluciones integrales de alimentación para empresas e instituciones</p>
+                    <h1 class="text-5xl md:text-7xl font-black mt-4 mb-6 font-montserrat animate-on-scroll scale-in is-visible" style="transition-delay: 400ms;">Comedores que Nutren y Motivan</h1>
+                    <p class="text-xl md:text-2xl mt-6 animate-on-scroll scale-in is-visible" style="transition-delay: 600ms;">Soluciones integrales de alimentación para empresas e instituciones</p>
                 </div>
             </div>
         </section>
@@ -202,6 +266,100 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COCINA PROFESIONAL ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
+                        <img src="../../../assets/img/cocina_por_dentro.png" alt="Cocina profesional en funcionamiento" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-right">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Infraestructura de Vanguardia</span>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Cocinas Profesionales Equipadas</h2>
+                        <p class="text-gray-600 text-lg mb-4">Nuestras instalaciones cuentan con <strong>equipamiento de última generación</strong> y cumplen con todos los estándares de higiene y seguridad alimentaria. Desde hornos profesionales hasta sistemas de refrigeración industrial.</p>
+                        <p class="text-gray-600 text-lg mb-6">Personal altamente capacitado trabaja en condiciones óptimas para garantizar la máxima calidad en cada preparación.</p>
+                        
+                        <ul class="space-y-4 text-gray-600 text-lg">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Equipamiento Industrial</h4>
+                                    <p class="text-base">Hornos, cocinas y sistemas de última generación</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Normas de Higiene</h4>
+                                    <p class="text-base">Cumplimiento estricto de protocolos HACCP</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Personal Especializado</h4>
+                                    <p class="text-base">Chefs y técnicos con experiencia en cocina industrial</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICIOS HOSPITALARIOS Y CLÍNICOS ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="text-left animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Servicios Especializados</span>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Alimentación Hospitalaria y Clínica</h2>
+                        <p class="text-gray-600 text-lg mb-4">Servicio especializado para <strong>hospitales, clínicas y centros de salud</strong>. Suministramos materias primas, insumos y elaboración diaria garantizando servicio integral, alimentación saludable y de calidad.</p>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg mb-6">
+                            <h4 class="font-bold text-brand-dark mb-3 flex items-center">
+                                <i class="fas fa-heartbeat text-blue-500 mr-3"></i>
+                                Control Dietético Especializado
+                            </h4>
+                            <p class="text-gray-600 mb-4">Contamos con un departamento diseñado para atender establecimientos de salud con un <strong>control dietético y nutricional</strong> que permite el cumplimiento de los protocolos de las dietas y agilidad en la gestión de las mismas.</p>
+                            
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 font-semibold">Modalidades disponibles:</p>
+                                <p class="text-sm text-blue-600">• Viandas individuales • Viandas asistidas • Comedor In Situ</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-gray-600 text-lg">
+                            <li class="flex items-start">
+                                <i class="fas fa-stethoscope text-blue-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Dietas Terapéuticas</h4>
+                                    <p class="text-base">Menús especializados según prescripción médica</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clipboard-check text-blue-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Protocolos Médicos</h4>
+                                    <p class="text-base">Seguimiento riguroso de indicaciones nutricionales</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-shield-alt text-blue-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Seguridad Alimentaria</h4>
+                                    <p class="text-base">Máximos estándares para pacientes vulnerables</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
+                        <img src="../../../assets/img/hospital.png" alt="Servicio hospitalario profesional" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -335,6 +493,82 @@
                 </div>
             </div>
         </section>
+
+        <!-- ===== VISIÓN, MISIÓN Y OBJETIVO ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestro Compromiso</h2>
+                    <p class="text-lg text-gray-600">Los pilares que guían nuestro trabajo en alimentación institucional</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- VISIÓN -->
+                    <div class="bg-brand-light-gray p-8 rounded-xl shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <div class="bg-brand-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-montserrat mb-4 text-brand-dark">VISIÓN</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            <strong>Revolucionar</strong> la industria alimentaria priorizando la <strong>satisfacción de nuestro cliente.</strong>
+                        </p>
+                    </div>
+
+                    <!-- MISIÓN -->
+                    <div class="bg-brand-green text-white p-8 rounded-xl shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <div class="bg-white text-brand-green rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-target text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-montserrat mb-4">MISIÓN</h3>
+                        <p class="text-lg leading-relaxed mb-4">
+                            Para nuestros clientes: Ser socios estratégicos <strong>brindando soluciones</strong> que enriquezcan la cultura de su empresa o institución.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            Para nuestros consumidores: brindar <strong>alimentos de calidad</strong>, ricos y saludables, transformando en una experiencia agradable el momento de comer.
+                        </p>
+                    </div>
+
+                    <!-- OBJETIVO -->
+                    <div class="bg-brand-light-gray p-8 rounded-xl shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                        <div class="bg-brand-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-bullseye text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-montserrat mb-4 text-brand-dark">OBJETIVO</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            <strong>Impactar</strong> positivamente la vida de las personas a través de la alimentación.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- VALORES ADICIONALES -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white border-2 border-brand-green/20 p-6 rounded-xl shadow-md text-center animate-on-scroll slide-in-from-left">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-brand-green to-brand-green mx-auto mb-4 flex items-center justify-center">
+                            <img src="../../../assets/img/maquina_expendedora.jpg" alt="Tecnología" class="w-12 h-12 rounded-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">Compromiso</h4>
+                        <p class="text-sm text-gray-600">Estándares bromatológicos y maquinaria de última generación.</p>
+                    </div>
+
+                    <div class="bg-white border-2 border-brand-green/20 p-6 rounded-xl shadow-md text-center animate-on-scroll scale-in">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-brand-green to-brand-green mx-auto mb-4 flex items-center justify-center">
+                            <img src="../../../assets/img/cocina_por_dentro.png" alt="Capacitación" class="w-12 h-12 rounded-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">Capacitación</h4>
+                        <p class="text-sm text-gray-600">Nuevas tecnologías, Seguridad e higiene</p>
+                    </div>
+
+                    <div class="bg-white border-2 border-brand-green/20 p-6 rounded-xl shadow-md text-center animate-on-scroll slide-in-from-right">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-brand-green to-brand-green mx-auto mb-4 flex items-center justify-center">
+                            <img src="../../../assets/img/comedor_corporativo.png" alt="Garantía" class="w-12 h-12 rounded-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">Garantía</h4>
+                        <p class="text-sm text-gray-600">Proveedores reconocidos, logística propia y registrada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ===== CTA FINAL ===== -->
         <section id="contacto" class="py-24 bg-brand-light-gray">
             <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
@@ -347,57 +581,43 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-8">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="../../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-8 w-auto">
+                        <img src="../../../assets/img/Logo G7 3D sin fondo.png" alt="Grupo Siete Logo" class="h-8 w-auto">
                         <h3 class="text-xl font-bold font-montserrat">GRUPO SIETE</h3>
                     </div>
-                    <p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p>
+                    <p class="text-gray-400 text-sm mb-4">Soluciones integrales en gastronomía y producción de eventos</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Navegación</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../../eventos/"
-                                class="text-gray-400 hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="../catering_corporativo/"
-                                class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li>
-                        <li><a href="./"
-                                class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li>
-                        <li><a href="../../feria_caravana/"
-                                class="text-gray-400 hover:text-white transition-colors">Feria Caravana</a></li>
-                        <li><a href="../../ciclos_de_cine/"
-                                class="text-gray-400 hover:text-white transition-colors">Ciclos de Cine</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Nosotros</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../../nosotros/"
-                                class="text-gray-400 hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="../../contacto/"
-                                class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    <h4 class="font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="../catering_corporativo/" class="text-gray-400 hover:text-brand-green transition-colors">Catering Corporativo</a></li>
+                        <li><a href="index.html" class="text-brand-green hover:text-white transition-colors font-semibold">Comedores Institucionales</a></li>
+                        <li><a href="../../eventos/" class="text-gray-400 hover:text-brand-green transition-colors">Producción de Eventos</a></li>
+                        <li><a href="../../feria_caravana/" class="text-gray-400 hover:text-pink-400 transition-colors">Feria Caravana</a></li>
+                        <li><a href="../../ciclos_de_cine/" class="text-gray-400 hover:text-brand-green transition-colors">Ciclos de Cine</a></li>
+                        <li><a href="../../nosotros/" class="text-gray-400 hover:text-brand-green transition-colors">Nosotros</a></li>
+                        <li><a href="../../contacto/" class="text-gray-400 hover:text-brand-green transition-colors">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li>
-                        <li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li>
-                        <li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt w-4 mr-2"></i>Buenos Aires</li>
+                        <li><i class="fas fa-envelope w-4 mr-2"></i>info@grupo7.com.ar</li>
+                        <li><i class="fas fa-phone w-4 mr-2"></i>+54 2494 123456</li>
                     </ul>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-instagram text-xl"></i></a>
-                    </div>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Grupo Siete. Todos los derechos reservados. | <a href="#"
-                        class="hover:text-white">Política de Privacidad</a></p>
+            <div class="mt-6 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
+                <p>&copy; 2024 Grupo Siete. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -406,7 +626,22 @@
         // --- Lógica para el menú móvil ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        const eventosSubmenu = document.getElementById('eventos-submenu');
+        
+        mobileMenuButton.addEventListener('click', () => { 
+            mobileMenu.classList.toggle('hidden'); 
+        });
+
+        // Toggle submenu eventos en mobile
+        const eventosToggle = document.getElementById('eventos-toggle');
+        if (eventosToggle && eventosSubmenu) {
+            eventosToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                eventosSubmenu.classList.toggle('hidden');
+                const chevron = eventosToggle.querySelector('.fa-chevron-down');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        }
 
         // --- Lógica para las animaciones de aparición al hacer scroll ---
         const observer = new IntersectionObserver((entries) => {
