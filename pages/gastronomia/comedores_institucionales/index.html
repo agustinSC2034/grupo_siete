@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="wi        <!-- ===== HERO SECTION DE LA PÁGINA ===== -->
+        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('../../../assets/img/comedor_instittucional3.png')">h=device-width, initial-scale=1.0">
     <title>Comedores Institucionales | Grupo Siete</title>
     
     <!-- Tailwind CSS -->
@@ -59,25 +60,28 @@
 <body class="bg-white">
 
     <!-- ===== HEADER ===== -->
-    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 left-0 w-full z-50 shadow-md">
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../../" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
+            <a href="../../../" class="flex items-center space-x-3">
+                <img src="../../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</span>
+            </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="../../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <a href="../../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
                 <div class="relative group">
                     <button class="text-brand-green font-bold flex items-center">
                         Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
                     <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="../catering_corporativo/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
-                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
-                        </a>
                         <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors bg-brand-light-gray">
                             <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
                         </a>
+                        <a href="../catering_corporativo/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100">
+                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
+                        </a>
                     </div>
                 </div>
-                <a href="../../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
                 <a href="../../nosotros/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
             </nav>
             <a href="../../contacto/" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
@@ -88,7 +92,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <a href="../../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
             <div class="border-b border-gray-100">
-                <div class="block py-3 px-4 text-brand-green font-semibold text-center bg-brand-light-gray">Gastronomía</div>
+                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
                 <a href="../catering_corporativo/" class="block py-2 px-8 text-gray-600 hover:bg-brand-light-gray text-sm">
                     <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
                 </a>
@@ -104,11 +108,12 @@
 
     <main>
         <!-- ===== HERO SECTION DE LA PÁGINA ===== -->
-        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1974&auto=format&fit=crop')">
+        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('../../../assets/img/comedor_corporativo.jpg')">
             <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
                 <div class="text-center text-white p-6">
-                    <span class="text-lg font-semibold uppercase tracking-widest">Gastronomía</span>
-                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat">Comedores Institucionales</h1>
+                    <span class="text-lg font-semibold uppercase tracking-widest animate-on-scroll scale-in is-visible" style="transition-delay: 200ms;">Gastronomía Institucional</span>
+                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat animate-on-scroll scale-in is-visible" style="transition-delay: 400ms;">Comedores que Nutren y Motivan</h1>
+                    <p class="text-xl mt-4 animate-on-scroll scale-in is-visible" style="transition-delay: 600ms;">Soluciones integrales de alimentación para empresas e instituciones</p>
                 </div>
             </div>
         </section>
@@ -118,36 +123,144 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="text-left animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Alimentación Institucional</span>
                         <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Potenciamos el bienestar de tu equipo a través de la alimentación</h2>
                         <p class="text-gray-600 text-lg mb-4">En Grupo Siete, entendemos que un buen almuerzo es mucho más que una simple comida: es una pausa necesaria, un momento para recargar energías y un factor clave en la productividad y el clima laboral. Por eso, nos especializamos en la gestión integral de comedores para empresas, organismos públicos e instituciones.</p>
                         <p class="text-gray-600 text-lg">Nuestro servicio se encarga de todo, desde la planificación de menús variados y balanceados, supervisados por nutricionistas, hasta la compra de materias primas de primera calidad, la elaboración en el lugar y la atención al personal.</p>
                     </div>
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
-                        <img src="https://images.unsplash.com/photo-1565299585323-15d11e38cb48?q=80&w=1974&auto=format&fit=crop" alt="Personal de cocina preparando alimentos frescos" class="w-full h-full object-cover">
+                        <img src="../../../assets/img/comedor_institucional1.png" alt="Comedor institucional moderno" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== BENEFICIOS CLAVE (CON ANIMACIÓN MEJORADA) ===== -->
+        <!-- ===== NUESTROS SERVICIOS ===== -->
         <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Servicios Integrales</h2>
+                    <p class="text-lg text-gray-600">Ofrecemos soluciones adaptadas a las necesidades específicas de cada institución.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <i class="fas fa-utensils text-3xl text-brand-green mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Viandas Individuales</h4>
+                        <p class="text-gray-600 text-sm">Comidas balanceadas preparadas individualmente.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <i class="fas fa-building text-3xl text-brand-green mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Elaboración In Situ</h4>
+                        <p class="text-gray-600 text-sm">Cocina fresca preparada en tus instalaciones.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                        <i class="fas fa-coffee text-3xl text-brand-green mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Cafetería y Kiosco</h4>
+                        <p class="text-gray-600 text-sm">Servicios complementarios de alimentación.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center animate-on-scroll scale-in" style="transition-delay: 400ms;">
+                        <i class="fas fa-robot text-3xl text-brand-green mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Vending</h4>
+                        <p class="text-gray-600 text-sm">Máquinas expendedoras de última generación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== VIANDAS MASIVAS ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
+                        <img src="../../../assets/img/viandas.png" alt="Viandas individuales" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left animate-on-scroll slide-in-from-right">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Producción Masiva</span>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Viandas a Gran Escala</h2>
+                        <p class="text-gray-600 text-lg mb-4">Elaboramos más de 15.000 viandas diarias para actos, festivales, encuentros deportivos, campañas políticas, colonias de vacaciones y cualquier otro tipo de evento que requiera servicio de alimentación masivo.</p>
+                        <p class="text-gray-600 text-lg mb-6">Disponemos de gran variedad y tamaños de viandas que se entregan en cajas individuales, tanto frías como calientes según infraestructura y requerimientos necesarios. También nos ocupamos de la logística de entrega.</p>
+                        <ul class="space-y-4 text-gray-600 text-lg">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Hasta 15.000 viandas diarias</h4>
+                                    <p class="text-base">Capacidad de producción masiva para grandes eventos</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Frías y Calientes</h4>
+                                    <p class="text-base">Adaptamos la temperatura según infraestructura disponible</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Logística Completa</h4>
+                                    <p class="text-base">Nos ocupamos de toda la cadena de distribución</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CAMPAÑAS POLÍTICAS ===== -->
+        <section class="py-20 bg-brand-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="text-left animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Servicios Especializados</span>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Campañas Políticas</h2>
+                        <p class="text-gray-600 text-lg mb-4">Acompañamos el armado y desarrollo de campañas políticas a través del abastecimiento de servicios de alimentación en oficinas, almuerzos y cenas, actos electorales, viandas para viajes de difusión o jornadas.</p>
+                        <p class="text-gray-600 text-lg mb-6">Entendemos las necesidades específicas de la dinámica electoral y nos adaptamos a los horarios y requerimientos únicos de este sector.</p>
+                        <ul class="space-y-4 text-gray-600 text-lg">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <span>Servicios de alimentación en oficinas de campaña</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <span>Almuerzos y cenas para eventos y reuniones</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <span>Catering para actos electorales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <span>Viandas para viajes de difusión</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
+                        <img src="../../../assets/img/evento.jpg" alt="Evento político" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BENEFICIOS CLAVE ===== -->
+        <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
                     <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Ventajas de nuestro servicio</h2>
                     <p class="text-lg text-gray-600">Delegá la gestión del comedor y enfocá tus recursos en lo que mejor sabés hacer.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
-                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                    <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
                         <i class="fas fa-leaf text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-2xl font-bold font-montserrat mb-2">Calidad Nutricional</h4>
                         <p class="text-gray-600">Menús diseñados por profesionales para asegurar una dieta equilibrada y deliciosa todos los días.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                    <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
                         <i class="fas fa-cogs text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-2xl font-bold font-montserrat mb-2">Operación Eficiente</h4>
                         <p class="text-gray-600">Nos ocupamos de la logística, el personal y el cumplimiento de todas las normativas de higiene y seguridad.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                    <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
                         <i class="fas fa-hand-holding-dollar text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-2xl font-bold font-montserrat mb-2">Optimización de Costos</h4>
                         <p class="text-gray-600">Gracias a nuestro volumen de compra y gestión experta, ofrecemos una solución competitiva y de alto valor.</p>
@@ -156,15 +269,15 @@
             </div>
         </section>
 
-        <!-- ===== CÓMO TRABAJAMOS (SE MANTIENE IGUAL) ===== -->
-        <section class="py-20 bg-white">
+        <!-- ===== CÓMO TRABAJAMOS ===== -->
+        <section class="py-20 bg-brand-light-gray">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
                     <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestro Proceso</h2>
-                    <p class="text-lg text-gray-600">Un método claro y transparente para garantizar el éxito.</p>
+                    <p class="text-lg text-gray-600">Un método claro y transparente para garantizar el éxito en la gestión de tu comedor.</p>
                 </div>
                 <div class="relative">
-                    <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block"></div>
+                    <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 hidden md:block"></div>
                     <div class="md:flex items-center md:justify-end mb-12 md:mb-0 animate-on-scroll slide-in-from-right">
                         <div class="md:w-1/2 md:pr-8 text-center md:text-right">
                             <div class="bg-brand-green text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto md:mr-0 mb-4">1</div>
@@ -190,27 +303,44 @@
             </div>
         </section>
 
-        <!-- ===== GALERÍA (CON ANIMACIÓN MEJORADA) ===== -->
-        <section class="py-20 bg-brand-light-gray">
+        <!-- ===== GALERÍA ===== -->
+        <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
                     <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestros Comedores en Acción</h2>
+                    <p class="text-lg text-gray-600">Espacios diseñados para la comodidad y el bienestar de los comensales.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
-                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/600x400/e2e8f0/212121?text=Comedor+1" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor institucional 1"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md col-span-1 md:col-span-2 animate-on-scroll scale-in"><img src="https://placehold.co/800x400/a0aec0/ffffff?text=Comedor+2" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor institucional 2"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md col-span-1 md:col-span-2 animate-on-scroll scale-in"><img src="https://placehold.co/800x400/4a5568/ffffff?text=Comedor+3" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor institucional 3"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/600x400/e2e8f0/212121?text=Comedor+4" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor institucional 4"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comedor_institucional2.webp" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor institucional moderno">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md col-span-1 md:col-span-2 animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comedor_corporativo.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Espacio de comedor empresarial">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md col-span-1 md:col-span-2 animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comedor_instittucional3.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor institucional amplio">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comedor_institucional4.webp" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comedor con equipamiento completo">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comedor_institucional5.jpeg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Personal en comedor">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/maquina_expendedora.jpg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Máquinas expendedoras">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comedor1.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Vista general del comedor">
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- ===== CTA FINAL ===== -->
-        <section id="contacto" class="py-24 bg-white">
+        <section id="contacto" class="py-24 bg-brand-light-gray">
             <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
                 <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Listo para mejorar la alimentación en tu empresa?</h2>
-                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos para recibir una propuesta personalizada sin compromiso.</p>
-                <a href="contacto.html" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">SOLICITAR PROPUESTA</a>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos para recibir una propuesta personalizada sin compromiso y transformar el comedor de tu institución.</p>
+                <a href="../../contacto/" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">SOLICITAR PROPUESTA</a>
             </div>
         </section>
     </main>
@@ -220,8 +350,8 @@
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8">
                 <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p></div>
-                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="gastronomia.html" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li><li><a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
-                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
+                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="../../../" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li><li><a href="../../eventos/" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="../catering_corporativo/" class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li><li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li><li><a href="../../nosotros/" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
+                <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires, Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p></div>
         </div>

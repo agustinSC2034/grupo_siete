@@ -59,25 +59,28 @@
 <body class="bg-white">
 
     <!-- ===== HEADER ===== -->
-    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 left-0 w-full z-50 shadow-md">
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../../" class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</a>
+            <a href="../../../" class="flex items-center space-x-3">
+                <img src="../../../assets/icons/logo_g7_3d.png" alt="Grupo Siete Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-brand-dark font-montserrat tracking-wider">GRUPO SIETE</span>
+            </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="../../../" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Inicio</a>
+                <a href="../../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
                 <div class="relative group">
                     <button class="text-brand-green font-bold flex items-center">
                         Gastronomía <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
                     <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100 bg-brand-light-gray">
-                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
-                        </a>
                         <a href="../comedores_institucionales/" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors">
                             <i class="fas fa-building w-5 mr-3 text-brand-green"></i>Comedores Institucionales
                         </a>
+                        <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-brand-light-gray hover:text-brand-green transition-colors border-b border-gray-100 bg-brand-light-gray">
+                            <i class="fas fa-utensils w-5 mr-3 text-brand-green"></i>Catering Corporativo
+                        </a>
                     </div>
                 </div>
-                <a href="../../eventos/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Eventos</a>
                 <a href="../../nosotros/" class="text-gray-600 hover:text-brand-green transition-colors duration-300">Nosotros</a>
             </nav>
             <a href="../../contacto/" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">COTIZÁ</a>
@@ -88,7 +91,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <a href="../../../" class="block text-center py-3 px-4 text-gray-600 hover:bg-brand-light-gray">Inicio</a>
             <div class="border-b border-gray-100">
-                <div class="block py-3 px-4 text-brand-green font-semibold text-center bg-brand-light-gray">Gastronomía</div>
+                <div class="block py-3 px-4 text-gray-600 font-semibold text-center">Gastronomía</div>
                 <a href="index.html" class="block py-2 px-8 text-brand-green hover:bg-brand-light-gray text-sm font-semibold bg-brand-light-gray">
                     <i class="fas fa-utensils w-4 mr-2 text-brand-green"></i>Catering Corporativo
                 </a>
@@ -104,11 +107,12 @@
 
     <main>
         <!-- ===== HERO SECTION DE LA PÁGINA ===== -->
-        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('https://images.unsplash.com/photo-1578160112054-b4a7a83935a8?q=80&w=2070&auto=format&fit=crop')">
+        <section class="h-96 bg-cover bg-center bg-fixed relative" style="background-image: url('../../../assets/img/cateringHD.png')">
             <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
                 <div class="text-center text-white p-6">
-                    <span class="text-lg font-semibold uppercase tracking-widest">Gastronomía</span>
-                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat">Catering Corporativo</h1>
+                    <span class="text-lg font-semibold uppercase tracking-widest animate-on-scroll scale-in is-visible" style="transition-delay: 200ms;">Gastronomía Corporativa</span>
+                    <h1 class="text-4xl md:text-6xl font-black mt-2 font-montserrat animate-on-scroll scale-in is-visible" style="transition-delay: 400ms;">Catering que Eleva tu Marca</h1>
+                    <p class="text-xl mt-4 animate-on-scroll scale-in is-visible" style="transition-delay: 600ms;">Experiencias gastronómicas únicas para eventos corporativos de impacto</p>
                 </div>
             </div>
         </section>
@@ -118,12 +122,13 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="text-left animate-on-scroll slide-in-from-left">
+                        <span class="text-brand-green font-bold uppercase tracking-wider">Experiencias Gastronómicas</span>
                         <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Elevamos la imagen de tu empresa con gastronomía de primer nivel</h2>
                         <p class="text-gray-600 text-lg mb-4">Un evento corporativo exitoso se recuerda por sus detalles, y la propuesta gastronómica es uno de los más importantes. En Grupo Siete diseñamos experiencias culinarias a medida que reflejan la excelencia y el profesionalismo de tu marca.</p>
                         <p class="text-gray-600 text-lg">Desde un coffee break para una reunión importante hasta un cocktail para un lanzamiento de producto o una cena de fin de año, nuestro equipo se encarga de crear un menú que sorprenda y deleite a tus invitados, cuidando cada aspecto del servicio.</p>
                     </div>
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-right">
-                        <img src="" alt="Mesa de catering en un evento corporativo" class="w-full h-full object-cover">
+                        <img src="../../../assets/img/catering_corporativo45.png" alt="Mesa de catering en un evento corporativo" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -133,29 +138,56 @@
         <section class="py-20 bg-brand-light-gray">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
-                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Soluciones para cada ocasión</h2>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Servicios para cada ocasión</h2>
                     <p class="text-lg text-gray-600">Nos adaptamos a la escala y el formato de tu evento, ofreciendo siempre la máxima calidad.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
                     <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
                         <i class="fas fa-mug-saucer text-4xl text-brand-green mb-4"></i>
+                        <h4 class="text-xl font-bold font-montserrat mb-2">Desayunos de Trabajo</h4>
+                        <p class="text-gray-600 text-sm">Comenzá el día con energía junto a tu equipo o clientes con opciones nutritivas.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <i class="fas fa-coffee text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-xl font-bold font-montserrat mb-2">Coffee Breaks</h4>
                         <p class="text-gray-600 text-sm">Pausas energizantes para jornadas de trabajo, congresos y reuniones.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
                         <i class="fas fa-martini-glass text-4xl text-brand-green mb-4"></i>
                         <h4 class="text-xl font-bold font-montserrat mb-2">Cocktails y Recepciones</h4>
                         <p class="text-gray-600 text-sm">Bocadillos gourmet y finger food ideal para lanzamientos y eventos de networking.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
-                        <i class="fas fa-utensils text-4xl text-brand-green mb-4"></i>
-                        <h4 class="text-xl font-bold font-montserrat mb-2">Almuerzos y Cenas</h4>
-                        <p class="text-gray-600 text-sm">Menús formales o descontracturados para agasajar a clientes o celebrar logros.</p>
-                    </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 400ms;">
-                        <i class="fas fa-gift text-4xl text-brand-green mb-4"></i>
-                        <h4 class="text-xl font-bold font-montserrat mb-2">Eventos Especiales</h4>
-                        <p class="text-gray-600 text-sm">Fiestas de fin de año, family days y cualquier celebración que tu empresa necesite.</p>
+                        <i class="fas fa-utensils text-4xl text-brand-green mb-4"></i>
+                        <h4 class="text-xl font-bold font-montserrat mb-2">Almuerzos y Cenas Formales</h4>
+                        <p class="text-gray-600 text-sm">Menús ejecutivos para agasajar a clientes o celebrar logros importantes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EVENTOS CORPORATIVOS ESPECIALIZADOS ===== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Eventos Corporativos de Alto Impacto</h2>
+                    <p class="text-lg text-gray-600">Desde lanzamientos de productos hasta eventos masivos, creamos experiencias gastronómicas memorables.</p>
+                </div>
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 100ms;">
+                        <i class="fas fa-rocket text-4xl text-brand-green mb-4"></i>
+                        <h4 class="text-xl font-bold font-montserrat mb-3">Lanzamientos de Producto</h4>
+                        <p class="text-gray-600">Catering temático que complementa perfectamente la presentación de tu nueva propuesta al mercado, creando una experiencia integral.</p>
+                    </div>
+                    <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 200ms;">
+                        <i class="fas fa-users text-4xl text-brand-green mb-4"></i>
+                        <h4 class="text-xl font-bold font-montserrat mb-3">Eventos Masivos VIP</h4>
+                        <p class="text-gray-600">Servicios especializados para sectores VIP, artistas y expositores en eventos de gran escala, con atención personalizada.</p>
+                    </div>
+                    <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg animate-on-scroll scale-in" style="transition-delay: 300ms;">
+                        <i class="fas fa-handshake text-4xl text-brand-green mb-4"></i>
+                        <h4 class="text-xl font-bold font-montserrat mb-3">Networking Empresarial</h4>
+                        <p class="text-gray-600">Creamos el ambiente perfecto para generar conexiones de negocio con propuestas gastronómicas que facilitan la interacción.</p>
                     </div>
                 </div>
             </div>
@@ -166,7 +198,7 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="rounded-xl overflow-hidden shadow-2xl animate-on-scroll slide-in-from-left">
-                        <img src="https://images.unsplash.com/photo-1579293679294-8e6e5b5a5b5b?q=80&w=1974&auto=format&fit=crop" alt="Chef decorando un plato" class="w-full h-full object-cover">
+                        <img src="../../../assets/img/personalCatering.jpg" alt="Personal especializado en catering" class="w-full h-full object-cover">
                     </div>
                     <div class="text-left animate-on-scroll slide-in-from-right">
                         <h2 class="text-3xl font-bold text-brand-dark mb-6 font-montserrat">Más que comida, una declaración de principios</h2>
@@ -182,7 +214,7 @@
                                 <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
                                 <div>
                                     <h4 class="font-bold text-brand-dark">Logística Impecable</h4>
-                                    <p>Nos encargamos del personal, el equipamiento y el timing para que el servicio sea fluido y profesional, sin que tengas que preocuparte por nada.</p>
+                                    <p>Nos encargamos del personal, el equipamiento y el timing para que el servicio sea fluido y profesional.</p>
                                 </div>
                             </li>
                              <li class="flex items-start">
@@ -190,6 +222,13 @@
                                 <div>
                                     <h4 class="font-bold text-brand-dark">Calidad y Presentación</h4>
                                     <p>Utilizamos ingredientes de primera línea y cuidamos al máximo la presentación, porque sabemos que la comida también entra por los ojos.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-green mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-brand-dark">Servicio Profesional</h4>
+                                    <p>Personal capacitado que garantiza atención de excelencia en cada detalle del evento.</p>
                                 </div>
                             </li>
                         </ul>
@@ -202,13 +241,34 @@
         <section class="py-20 bg-brand-light-gray">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll scale-in">
-                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Un Vistazo a Nuestros Eventos</h2>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4 font-montserrat">Nuestros Eventos en Acción</h2>
+                    <p class="text-lg text-gray-600">Una muestra de la calidad y profesionalismo que caracteriza nuestros servicios.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
-                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/600x800/e2e8f0/212121?text=Catering+1" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Catering corporativo 1"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/600x800/a0aec0/ffffff?text=Catering+2" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Catering corporativo 2"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/600x800/4a5568/ffffff?text=Catering+3" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Catering corporativo 3"></div>
-                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in"><img src="https://placehold.co/600x800/e2e8f0/212121?text=Catering+4" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Catering corporativo 4"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/catering_corporativo20.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Catering corporativo eventos">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/catering_corporativo30.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Buffet empresarial">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/catering_corporativo40.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Servicio de catering profesional">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/catering_corporativo50.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Mesa de catering gourmet">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/catering_corporativo60.png" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Evento corporativo con catering">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comida_catering.jpg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Comida gourmet para eventos">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/comida4.jpg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Platos especializados">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-on-scroll scale-in">
+                        <img src="../../../assets/img/panescomida.jpg" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" alt="Variedad gastronómica">
+                    </div>
                 </div>
             </div>
         </section>
@@ -217,8 +277,8 @@
         <section id="contacto" class="py-24 bg-white">
             <div class="container mx-auto px-6 text-center animate-on-scroll scale-in">
                 <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 font-montserrat">¿Querés que tu próximo evento sea inolvidable?</h2>
-                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos y empecemos a diseñar juntos una experiencia gastronómica única.</p>
-                <a href="contacto.html" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">COTIZAR CATERING</a>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Contactanos y empecemos a diseñar juntos una experiencia gastronómica única para tu empresa.</p>
+                <a href="../../contacto/" class="bg-brand-green text-white font-black text-lg py-4 px-12 rounded-lg shadow-xl hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 inline-block">COTIZAR CATERING</a>
             </div>
         </section>
     </main>
@@ -228,7 +288,7 @@
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8">
                 <div><h3 class="text-xl font-bold font-montserrat mb-4">GRUPO SIETE</h3><p class="text-gray-400">Soluciones integrales en gastronomía y producción de eventos </p></div>
-                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="gastronomia.html" class="text-gray-400 hover:text-white transition-colors">Gastronomía</a></li><li><a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
+                <div><h4 class="font-bold mb-4">Navegación</h4><ul class="space-y-2"><li><a href="../../../" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li><li><a href="../../eventos/" class="text-gray-400 hover:text-white transition-colors">Eventos</a></li><li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Catering Corporativo</a></li><li><a href="../comedores_institucionales/" class="text-gray-400 hover:text-white transition-colors">Comedores Institucionales</a></li><li><a href="../../nosotros/" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
                 <div><h4 class="font-bold mb-4">Contacto</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-map-marker-alt w-5 mr-2"></i>Buenos Aires</li><li><i class="fas fa-envelope w-5 mr-2"></i>info@grupo-siete.com</li><li><i class="fas fa-phone w-5 mr-2"></i>(0249) 4xx-xxxx</li></ul><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a></div></div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Grupo Siete. Todos los derechos reservados. | <a href="#" class="hover:text-white">Política de Privacidad</a></p></div>

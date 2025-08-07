@@ -4,7 +4,7 @@ Aquí te preparé un documento de contexto completo. Está pensado para que un e
 
 Contexto y Requerimientos del Proyecto: Rediseño Web Grupo Siete
 Resumen del Proyecto:
-El proyecto consiste en el rediseño y desarrollo completo del sitio web para "Grupo Siete", una empresa de Tandil con dos unidades de negocio principales: Catering Institucional y Producción Técnica de Eventos. El objetivo es crear una web visualmente moderna, limpia y con animaciones fluidas, que comunique claramente esta dualidad de servicios a un público objetivo B2B (empresas, gobiernos, instituciones).
+El proyecto consiste en el rediseño y desarrollo completo del sitio web para "Grupo Siete", una empresa de Buenos aires con dos unidades de negocio principales: Catering Institucional y Producción Técnica de Eventos. El objetivo es crear una web visualmente moderna, limpia y con animaciones fluidas, que comunique claramente esta dualidad de servicios a un público objetivo B2B (empresas, gobiernos, instituciones).
 
 1. Punto de Partida: Análisis de la Web Anterior
 Plataforma: El sitio original estaba construido sobre una plataforma tipo Wix, lo que limitaba la personalización y el rendimiento.
